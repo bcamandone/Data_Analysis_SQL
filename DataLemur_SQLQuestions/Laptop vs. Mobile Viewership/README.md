@@ -2,7 +2,8 @@ Consigna: Suponga que recibe la siguiente tabla que contiene información sobre 
 teléfono). Defina "móvil" como la suma de los números de audiencia de tabletas y teléfonos. Escriba una consulta para comparar la audiencia en computadoras portátiles 
 versus dispositivos móviles. 
 
-Link
+Link:
+
 https://datalemur.com/questions/laptop-mobile-viewership 
 
 
