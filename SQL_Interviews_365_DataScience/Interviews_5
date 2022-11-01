@@ -11,12 +11,3 @@ select department, salary, rank_salaries
 from ranked 
 where rank_salaries <= 3 and salary is not null	
 order by department, salary desc 
-
-
-
-
-
-
-
-
-
