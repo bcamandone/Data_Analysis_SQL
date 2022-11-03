@@ -1,0 +1,16 @@
+--Consigna: Suponga que recibe la siguiente tabla que muestra las ofertas de trabajo para todas las empresas en la plataforma de LinkedIn. 
+--Escriba una consulta para obtener el número de empresas que han publicado anuncios de trabajo duplicados (dos trabajos en la misma empresa con el mismo título,
+--y descripción).
+
+WITH duplicate_jobs AS
+(SELECT company_id, 
+  COUNT(company_id) OVER(PARTITION BY company_id, title, description) AS count_jobs
+  FROM job_listings)
+
+  SELECT count(DISTINCT company_id)
+  FROM duplicate_jobs
+  WHERE count_jobs > 1
+
+Link: 
+
+https://datalemur.com/questions/duplicate-job-listings
