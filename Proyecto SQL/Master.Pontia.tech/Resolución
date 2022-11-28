@@ -1,8 +1,7 @@
 
-## Análisis de Ventas 
+#Análisis de Ventas 
 
-#1 Queremos saber cuales son las ventas por año y por mes en 
-#términos brutos y luego el margen absoluto.
+#1 Queremos saber cuales son las ventas por año y por mes en términos brutos y luego el margen absoluto.
 
 SELECT 
 EXTRACT( YEAR_MONTH FROM created_at) month_year,
@@ -13,8 +12,7 @@ FROM ositofeliz.orders
 GROUP BY month_year
 ORDER BY month_year;
 
-#2 ¿Cuales son las ventas brutas medias de cada mes y año, 
-#devuelve los TOP 10? ¿Que puedes observar?
+#2 ¿Cuales son las ventas brutas medias de cada mes y año, devuelve los TOP 10? ¿Que puedes observar?
 
 SELECT 
 EXTRACT( YEAR_MONTH FROM created_at) month_year,
@@ -87,7 +85,7 @@ GROUP BY mes
 ORDER BY SUM(price_usd) desc;
 
 
-## Análisis WEB 
+# Análisis WEB 
 
 # 8 ¿Cuales son los ads o contenidos que han atraído más sesiones?
 
@@ -98,8 +96,7 @@ FROM ositofeliz.website_sessions
 GROUP BY utm_content
 ORDER BY COUNT(website_session_id) desc;
 
-# 9 Es lo mismo sesiones que usuarios?¿Cuál es la 
-#cantidad de usuarios individuales?
+# 9 Es lo mismo sesiones que usuarios?¿Cuál es la cantidad de usuarios individuales?
 
 SELECT 
 utm_content,
@@ -138,8 +135,7 @@ FROM ositofeliz.website_sessions
 GROUP BY mes
 ORDER BY COUNT(website_session_id) desc
 
-# 13 Ya que vimos que el mes de noviembre es el que ha tenido más trafico, 
-#podrías ver de ese mes la cantidad de sesiones que han venido por movil y 
+# 13 Ya que vimos que el mes de noviembre es el que ha tenido más trafico, podrías ver de ese mes la cantidad de sesiones que han venido por movil y 
 #la cantidad que han venido por ordenador?
 
 SELECT 
