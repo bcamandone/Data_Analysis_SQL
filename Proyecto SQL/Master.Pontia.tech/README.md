@@ -52,3 +52,6 @@ Tu objetivo será analizar la situación actual de la empresa. Medir  la convers
 12. ¿Cúales son los meses que han atraido más tráfico?
 13. Ya que vimos el mes que ha tenido más trafico, podrías ver de ese mes la cantidad de sesiones que han venido por movil y la cantidad que han venido por ordenador?
 14. ¿Qué campañas son las que han dado más margen por productos?
+
+
+Se utilizara MySql como motor de base de datos para responder a estar preguntas.
