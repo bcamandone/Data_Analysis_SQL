@@ -5,8 +5,12 @@ Muestre la identificación del usuario, la fecha del tweet y los promedios móvi
 Suposiciones importantes:
 
 -Las filas de esta tabla son consecutivas y están ordenadas por fecha.
+
 -Cada fila representa un día diferente
+
 -No se cuenta un día que no corresponda a una fila de esta tabla. El día más reciente es la siguiente fila por encima de la fila actual.
+
+
 Nota: El promedio móvil es una métrica que nos ayuda a analizar puntos de datos mediante la creación de una serie de promedios basados en diferentes subconjuntos de un conjunto de datos.
 
 Link: https://datalemur.com/questions/rolling-average-tweets
