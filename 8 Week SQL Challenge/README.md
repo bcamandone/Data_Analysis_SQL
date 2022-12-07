@@ -7,3 +7,6 @@ Motor de base de datos: Postgre SQL
 Link:
 
 https://8weeksqlchallenge.com
+
+
+👏 ¡Por favor, dame un ⭐️ si te gusta este proyecto!
