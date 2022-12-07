@@ -1,3 +1,7 @@
+
+![2](https://user-images.githubusercontent.com/86261762/206271138-e8b36600-084f-48a7-87ac-71fda22252fc.png)
+
+
 Consignas: 
 
 ¿Cuál es la cantidad total que gastó cada cliente en el restaurante?
