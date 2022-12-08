@@ -53,3 +53,4 @@ FROM tmp
 SELECT product_name, customer_id, total_comprado
 FROM top
 where rank_product = 1
+
