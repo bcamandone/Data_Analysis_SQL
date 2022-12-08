@@ -12,3 +12,24 @@ SELECT count(distinct(EXTRACT(DAY FROM order_date))) as cantidad_visitas, custom
 FROM "sales" 
 GROUP BY customer_id
 ORDER BY customer_id
+
+--¿Cuál fue el primer artículo del menú comprado por cada cliente?
+
+SELECT e.product_name, s.customer_id
+FROM "sales" s  JOIN menu e
+ON (s.product_id = e.product_id)
+WHERE order_date =  (select MIN(order_date) from "sales" )
+GROUP BY  s.customer_id, e.product_name
+ORDER BY s.customer_id
+
+--¿Cuál es el artículo más comprado en el menú y cuántas veces lo compraron todos los clientes?
+SELECT
+e.product_name,
+COUNT(*) AS total_comprado
+FROM sales s
+JOIN menu e 
+ON s.product_id = e.product_id
+GROUP BY  e.product_name
+ORDER BY total_comprado desc
+LIMIT 1
+
