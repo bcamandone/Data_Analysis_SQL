@@ -5,3 +5,10 @@ FROM "menu" e
 JOIN sales s ON (e.product_id = s.product_id)
 GROUP BY s.customer_id
 ORDER BY s.customer_id
+
+--¿Cuántos días ha visitado cada cliente el restaurante?
+
+SELECT count(distinct(EXTRACT(DAY FROM order_date))) as cantidad_visitas, customer_id
+FROM "sales" 
+GROUP BY customer_id
+ORDER BY customer_id
