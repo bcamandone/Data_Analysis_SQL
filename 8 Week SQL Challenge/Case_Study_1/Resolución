@@ -33,3 +33,23 @@ GROUP BY  e.product_name
 ORDER BY total_comprado desc
 LIMIT 1
 
+--¿Qué artículo fue el más popular para cada cliente?
+
+WITH tmp as(
+SELECT
+e.product_name,
+COUNT(*) AS total_comprado,
+s.customer_id
+FROM sales s
+JOIN menu e 
+ON s.product_id = e.product_id
+GROUP BY  e.product_name,s.customer_id
+),
+top as (
+SELECT product_name, customer_id, total_comprado,
+DENSE_RANK() OVER( PARTITION BY customer_id ORDER BY total_comprado desc) as rank_product
+FROM tmp
+)
+SELECT product_name, customer_id, total_comprado
+FROM top
+where rank_product = 1
