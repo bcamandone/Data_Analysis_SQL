@@ -95,3 +95,16 @@ FROM tmp
 where rank_ = 1 
 
 --8) ¿Cuál es el total de artículos y la cantidad gastada por cada miembro antes de convertirse en miembro?
+
+SELECT
+s.customer_id,
+COUNT(e.product_id) as total_comprado,
+SUM(e.price) as total_gastado
+FROM sales s
+JOIN menu e 
+ON (s.product_id = e.product_id)
+JOIN members b
+ON (s.customer_id = b.customer_id) 
+WHERE s.order_date < b.join_date
+GROUP BY s.customer_id
+ORDER BY s.customer_id
