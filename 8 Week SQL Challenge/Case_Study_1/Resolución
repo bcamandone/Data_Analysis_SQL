@@ -74,4 +74,24 @@ SELECT product_name, customer_id, join_date, order_date
 FROM tmp
 where rank_ = 1 
 
---7) 
+--7) --¿Qué artículo se compró justo antes de que el cliente se convirtiera en miembro?
+
+WITH tmp as(
+SELECT
+e.product_name,
+s.customer_id,
+b.join_date,
+s.order_date,
+DENSE_RANK() OVER(PARTITION BY s.customer_id ORDER BY s.order_date DESC ) as rank_
+FROM sales s
+JOIN menu e 
+ON (s.product_id = e.product_id)
+JOIN members b
+ON (s.customer_id = b.customer_id) 
+WHERE s.order_date < b.join_date
+) 
+SELECT product_name, customer_id, join_date, order_date
+FROM tmp
+where rank_ = 1 
+
+--8) ¿Cuál es el total de artículos y la cantidad gastada por cada miembro antes de convertirse en miembro?
