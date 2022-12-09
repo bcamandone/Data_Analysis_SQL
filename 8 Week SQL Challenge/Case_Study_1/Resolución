@@ -1,4 +1,4 @@
- --¿Cuál es la cantidad total que gastó cada cliente en el restaurante?
+ --1) ¿Cuál es la cantidad total que gastó cada cliente en el restaurante?
  
 SELECT SUM(e.price) as total_gastado, s.customer_id
 FROM "menu" e 
@@ -6,14 +6,14 @@ JOIN sales s ON (e.product_id = s.product_id)
 GROUP BY s.customer_id
 ORDER BY s.customer_id
 
---¿Cuántos días ha visitado cada cliente el restaurante?
+--2) ¿Cuántos días ha visitado cada cliente el restaurante?
 
 SELECT count(distinct(EXTRACT(DAY FROM order_date))) as cantidad_visitas, customer_id
 FROM "sales" 
 GROUP BY customer_id
 ORDER BY customer_id
 
---¿Cuál fue el primer artículo del menú comprado por cada cliente?
+--3) ¿Cuál fue el primer artículo del menú comprado por cada cliente?
 
 SELECT e.product_name, s.customer_id
 FROM "sales" s  JOIN menu e
@@ -22,7 +22,7 @@ WHERE order_date =  (select MIN(order_date) from "sales" )
 GROUP BY  s.customer_id, e.product_name
 ORDER BY s.customer_id
 
---¿Cuál es el artículo más comprado en el menú y cuántas veces lo compraron todos los clientes?
+--4) ¿Cuál es el artículo más comprado en el menú y cuántas veces lo compraron todos los clientes?
 SELECT
 e.product_name,
 COUNT(*) AS total_comprado
@@ -33,7 +33,7 @@ GROUP BY  e.product_name
 ORDER BY total_comprado desc
 LIMIT 1
 
---¿Qué artículo fue el más popular para cada cliente?
+--5) ¿Qué artículo fue el más popular para cada cliente?
 
 WITH tmp as(
 SELECT
@@ -54,7 +54,7 @@ SELECT product_name, customer_id, total_comprado
 FROM top
 where rank_product = 1
 
---¿Qué artículo compró primero el cliente después de convertirse en miembro?
+--6) ¿Qué artículo compró primero el cliente después de convertirse en miembro?
 
 WITH tmp as(
 SELECT
@@ -73,3 +73,5 @@ WHERE s.order_date <= b.join_date
 SELECT product_name, customer_id, join_date, order_date
 FROM tmp
 where rank_ = 1 
+
+--7) 
