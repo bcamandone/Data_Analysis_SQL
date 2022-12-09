@@ -68,7 +68,7 @@ JOIN menu e
 ON (s.product_id = e.product_id)
 JOIN members b
 ON (s.customer_id = b.customer_id) 
-WHERE s.order_date <= b.join_date
+WHERE s.order_date >= b.join_date
 ) 
 SELECT product_name, customer_id, join_date, order_date
 FROM tmp
