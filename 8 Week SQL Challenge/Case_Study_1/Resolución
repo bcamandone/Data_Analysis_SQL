@@ -108,3 +108,9 @@ ON (s.customer_id = b.customer_id)
 WHERE s.order_date < b.join_date
 GROUP BY s.customer_id
 ORDER BY s.customer_id
+
+--9) Si cada $ 1 gastado equivale a 10 puntos y el sushi tiene un multiplicador de puntos 2x, ¿cuántos puntos tendría cada cliente?
+
+
+
+--10) 
