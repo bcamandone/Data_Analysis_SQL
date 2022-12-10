@@ -110,19 +110,23 @@ GROUP BY s.customer_id
 ORDER BY s.customer_id
 
 --9) Si cada $ 1 gastado equivale a 10 puntos y el sushi tiene un multiplicador de puntos 2x, ¿cuántos puntos tendría cada cliente?
--- Nota: Solo los clientes que son miembros reciben puntos al comprar artículos
+--Suposición: Solo los clientes que son miembros reciben puntos al comprar artículos, los puntos los reciben en las ordenes iguales o posteriores a la fecha
+--en la que se convierten en miembros. 
+
 WITH tmp as(
 SELECT
 s.customer_id,
-SUM(CASE WHEN s.customer_id IN (SELECT customer_id FROM members) AND e.product_name = 'sushi' THEN e.price*20 ELSE 0 END) as total_gastado_sushi,
-SUM(CASE WHEN s.customer_id IN (SELECT customer_id FROM members) AND e.product_name <> 'sushi' THEN e.price*10 ELSE 0 END) as total_gastado_otros_productos
+SUM(CASE WHEN e.product_name = 'sushi' THEN e.price*20 ELSE 0 END) as total_puntos_sushi,
+SUM(CASE WHEN e.product_name <> 'sushi' THEN e.price*10 ELSE 0 END) as total_puntos_otros_productos
 FROM sales s
 JOIN menu e 
-ON (s.product_id = e.product_id)
+ON (s.product_id = e.product_id) JOIN members b
+ON (s.customer_id = b.customer_id)
+WHERE s.order_date >= b.join_date
 GROUP BY s.customer_id
 )
 SELECT customer_id,
-(total_gastado_sushi + total_gastado_otros_productos) as total_puntos
+(total_puntos_sushi + total_puntos_otros_productos) as total_puntos
 FROM tmp
 ORDER BY customer_id
 
