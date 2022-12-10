@@ -133,11 +133,29 @@ ORDER BY customer_id
 
 --10) En la primera semana después de que un cliente se une al programa (incluida la fecha de ingreso), gana el doble de puntos en todos los artículos, no solo en sushi.
 --¿Cuántos puntos tienen los clientes A y B a fines de enero?
+--Suposición: Solo los clientes que son miembros reciben puntos al comprar artículos, los puntos los reciben en las ordenes iguales o posteriores a la fecha
+--en la que se convierten en miembros. Solo las ordenes de la primer semana en la que se convierten en miembros suman 20 puntos para todos los articulos. 
 
-
-
-
-
-
-
+WITH fechas AS (
+  SELECT 
+    customer_id, 
+    join_date,
+    join_date + CAST('6 days' AS INTERVAL) AS primera_semana, 
+    date('2021-01-31') AS ultima_fecha
+  FROM members
+)
+SELECT 
+  f.customer_id,
+  SUM(CASE 
+      	WHEN s.order_date BETWEEN f.join_date AND f.primera_semana THEN e.price*20
+      	WHEN e.product_name = 'sushi' THEN e.price*20
+        ELSE e.price*10 END) AS total_puntos
+FROM sales s
+JOIN fechas f 
+  ON (s.customer_id = f.customer_id)
+JOIN menu e 
+  ON (s.product_id = e.product_id)
+WHERE s.order_date <= ultima_fecha and s.order_date >= f.join_date
+GROUP BY f.customer_id
+ORDER BY f.customer_id
 
