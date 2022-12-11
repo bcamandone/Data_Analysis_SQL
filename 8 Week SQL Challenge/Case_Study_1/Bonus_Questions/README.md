@@ -7,9 +7,13 @@ Las siguientes preguntas están relacionadas con la creación de tablas de datos
 Vuelva a crear la siguiente salida de tabla utilizando los datos disponibles:
 
 customer_id
+
 order_date	
+
 product_name	
+
 price	
+
 member
 
 
@@ -18,10 +22,15 @@ member
 Danny también necesita más información sobre el ranking de productos de los clientes, solo para los clientes miembros, por lo que espera valores de ranking nulos para los registros cuando los clientes aún no forman parte del programa de fidelización.
 
 customer_id
+
 order_date	
+
 product_name	
+
 price	
+
 member	
+
 ranking
 
 
