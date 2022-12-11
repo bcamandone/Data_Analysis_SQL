@@ -14,7 +14,7 @@ product_name
 
 price	
 
-member
+member (Y = 'YES, N = 'NO)
 
 
 2) Rank All The Things
