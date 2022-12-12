@@ -42,4 +42,44 @@ Antes de comenzar a escribir sus consultas SQL, es posible que desee investigar 
 
 7) ¿Cuál es el porcentaje de entrega exitosa para cada corredor?
 
+## C. Optimización de ingredientes
+1) ¿Cuáles son los ingredientes estándar para cada pizza?
+ 
+2) ¿Cuál fue el extra más comúnmente añadido?
 
+3) ¿Cuál fue la exclusión más común?
+
+4) Genere un artículo de pedido para cada registro en la tabla pedidos_clientes en el formato de uno de los siguientes:
+Meat Lovers
+Meat Lovers - Exclude Beef
+Meat Lovers - Extra Bacon
+Meat Lovers - Exclude Cheese, Bacon - Extra Mushroom, Peppers
+
+5) Genere una lista de ingredientes separados por comas ordenados alfabéticamente para cada pedido de pizza de la tabla customer_orders y agregue 2x delante de cualquier ingrediente relevante
+Por ejemplo: "Amantes de la carne: 2xTocino, Carne de res, ... , Salami"
+
+6) ¿Cuál es la cantidad total de cada ingrediente utilizado en todas las pizzas entregadas ordenadas por el más frecuente primero?
+
+## D. Precios y calificaciones
+
+1) Si una pizza Meat Lovers cuesta $ 12 y una vegetariana cuesta $ 10 y no hubo cargos por cambios, ¿cuánto dinero ha ganado Pizza Runner hasta ahora si no hay tarifas de entrega?
+
+2) ¿Qué pasa si hubo un cargo adicional de $ 1 por los extras de pizza?
+Nota: Agregar queso cuesta $1 extra
+
+3) El equipo de Pizza Runner ahora quiere agregar un sistema de calificación adicional que permita a los clientes calificar a su repartidor. ¿Cómo diseñaría una tabla adicional para este nuevo conjunto de datos? Genere un esquema para esta nueva tabla e inserte sus propios datos para las calificaciones de cada cliente exitoso. 
+Nota: ordene entre 1 a 5.
+
+4) Usando su tabla recién generada, ¿puede unir toda la información para formar una tabla que tenga la siguiente información para entregas exitosas?
+customer_id
+order_id
+runner_id
+rating
+order_time
+pickup_time
+Time between order and pickup
+Delivery duration
+Average speed
+Total number of pizzas
+
+5) Si una pizza Meat Lovers costaba $12 y una vegetariana $10, precios fijos sin costo por extras, y a cada repartidor se le paga $0.30 por kilómetro recorrido, ¿cuánto dinero le queda a Pizza Runner después de estas entregas?
