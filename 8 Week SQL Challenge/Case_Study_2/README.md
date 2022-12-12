@@ -83,3 +83,6 @@ Average speed
 Total number of pizzas
 
 5) Si una pizza Meat Lovers costaba $12 y una vegetariana $10, precios fijos sin costo por extras, y a cada repartidor se le paga $0.30 por kilómetro recorrido, ¿cuánto dinero le queda a Pizza Runner después de estas entregas?
+
+## E.Bonus Questions 
+Si Danny quiere ampliar su gama de pizzas, ¿cómo afectaría esto al diseño de datos existente? Escriba una declaración INSERTAR para demostrar qué sucedería si se agregara una nueva pizza Supreme con todos los ingredientes al menú de Pizza Runner.
