@@ -14,7 +14,7 @@ WHERE extras IS NULL OR extras LIKE 'null'
 
 --Tabla runner_orders
 
---Conviertir valores de texto 'nulo' en pickup_time, duration, distance y cancellation  en valores nulos.
+--Convertir valores de texto 'nulo' en pickup_time, duration, distance y cancellation  en valores nulos.
 
 UPDATE pizza_runner."runner_orders"
 SET pickup_time = NULL
