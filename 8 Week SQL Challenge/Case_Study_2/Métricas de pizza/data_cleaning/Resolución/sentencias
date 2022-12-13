@@ -32,6 +32,14 @@ UPDATE pizza_runner."runner_orders"
 SET cancellation = NULL
 WHERE cancellation LIKE 'null'
 
+
+--Convertir valores vacios en la columna cancellation  en valores nulos.
+
+UPDATE pizza_runner."runner_orders"
+SET cancellation = NULL
+WHERE cancellation IN ('')
+
+
 --Extraer los 'km' de la columna  distance y convertir a tipo de datos FLOAT
 
 UPDATE pizza_runner."runner_orders"
