@@ -48,6 +48,20 @@ ALTER TABLE pizza_runner."runner_orders"
 ALTER COLUMN  pickup_time TYPE timestamp without time zone 
 USING pickup_time:: timestamp without time zone 
 
---Convertir la columna la Duration a tipo de datos INT
+--Extraer los 'minutos' de la columna Duration y convertir a tipo de datos INT
 
+UPDATE pizza_runner."runner_orders"
+SET duration = TRIM('mins' FROM duration)
+WHERE duration LIKE '%mins'
 
+UPDATE pizza_runner."runner_orders"
+SET duration = TRIM('minute' FROM duration)
+WHERE duration LIKE '%minute'
+
+UPDATE pizza_runner."runner_orders"
+SET duration = TRIM('minutes' FROM duration)
+WHERE duration LIKE '%minutes'
+
+ALTER TABLE pizza_runner."runner_orders"
+ALTER COLUMN  duration TYPE INTEGER 
+USING distance:: INTEGER 
