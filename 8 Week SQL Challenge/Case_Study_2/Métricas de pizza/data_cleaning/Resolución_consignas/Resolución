@@ -1,8 +1,18 @@
 --1)¿Cuántas pizzas se pidieron?
 
---2)¿Cuántos pedidos únicos de clientes se realizaron?
+SELECT COUNT(order_id) as cantidad_pizzas
+FROM pizza_runner.customer_orders
 
---3)¿Cuántos pedidos exitosos entregó cada repartidor ?
+--2)¿Cuántos pedidos únicos de clientes se realizaron?
+ 
+SELECT COUNT(DISTINCT(order_id)) as pedidos_unicos
+FROM pizza_runner.customer_orders
+
+--3)¿Cuántos pedidos exitosos entregó cada repartidor?
+
+
+
+
 
 --4)¿Cuántas pizzas de cada tipo se entregaron?
 
