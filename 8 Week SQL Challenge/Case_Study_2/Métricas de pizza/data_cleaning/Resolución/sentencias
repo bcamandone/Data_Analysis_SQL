@@ -32,12 +32,22 @@ UPDATE pizza_runner."runner_orders"
 SET cancellation = NULL
 WHERE cancellation LIKE 'null'
 
---Extraer los 'km' de la columna  pickup_time y convertir a tipo de datos timestamp without time zone
+--Extraer los 'km' de la columna  distance y convertir a tipo de datos FLOAT
 
+UPDATE pizza_runner."runner_orders"
+SET distance = TRIM('km' FROM distance)
+WHERE distance LIKE '%km'
 
+ALTER TABLE pizza_runner."runner_orders"
+ALTER COLUMN  distance TYPE float
+USING distance::float
 
+--Convertir la columna pickup_time  a tipo de datos timestamp without time zone
 
---Convertí la columna Distancia  a FLOAT.
---Convertí la Duración  a INT
+ALTER TABLE pizza_runner."runner_orders"
+ALTER COLUMN  pickup_time TYPE timestamp without time zone 
+USING pickup_time:: timestamp without time zone 
+
+--Convertir la columna la Duration a tipo de datos INT
 
 
