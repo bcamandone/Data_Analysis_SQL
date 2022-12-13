@@ -10,9 +10,10 @@ FROM pizza_runner.customer_orders
 
 --3)¿Cuántos pedidos exitosos entregó cada repartidor?
 
-
-
-
+SELECT COUNT(order_id) AS pedidos_exitosos, runner_id
+FROM pizza_runner.runner_orders
+WHERE cancellation IS NULL 
+GROUP BY runner_id
 
 --4)¿Cuántas pizzas de cada tipo se entregaron?
 
