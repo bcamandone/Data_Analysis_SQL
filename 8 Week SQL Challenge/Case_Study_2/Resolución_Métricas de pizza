@@ -1,21 +1,13 @@
 -- Data cleaning
 
---Cree una vista customer_orders_clean tomando los datos de la tabla customer_orders
---Convertí valores nulos y valores de texto 'nulo' en la columna exclusiones y en la columna extras en espacios en blanco '' 
+--Tabla customer_orders
+--Convertir valores nulos y valores de texto 'nulo' en la columna exclusiones y en la columna extras en espacios en blanco '' 
 
-CREATE VIEW customer_orders_clean AS
-SELECT 
-order_id,customer_id,pizza_id,  order_time,
-CASE WHEN exclusions IS NULL OR exclusions LIKE 'null' THEN ''
-ELSE exclusions END AS exclusions,
-CASE WHEN extras IS NULL OR extras LIKE 'null' THEN ''
-ELSE extras END AS extras
-FROM pizza_runner."customer_orders"
 
---Cree una vista runner_orders_clean a partir de la tabla runner_orders:
---Conviertí valores de texto 'nulo' en pickup_time, duración y cancelación en valores nulos.
---Convertí la columna  pickup_time a DATETIME.
---Convertí la columna Distancia  a FLOAT.
---Convertí la Duración  a INT
+--Tabla runner_orders
+--Conviertir valores de texto 'nulo' en pickup_time, duración y cancelación en valores nulos.
+--Convertir la columna  pickup_time a DATETIME.
+--Convertir la columna Distancia  a FLOAT.
+--Convertir la Duración  a INT
 
 
