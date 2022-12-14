@@ -39,6 +39,17 @@ ORDER BY c.customer_id
 
 --6)¿Cuál fue el número máximo de pizzas entregadas en un solo pedido?
 
+WITH tmp as(
+SELECT c.order_id, count(pizza_id) as cantidad_pizzas
+FROM pizza_runner.customer_orders c 
+JOIN pizza_runner.runner_orders r 
+ON (c.order_id = r.order_id)
+WHERE r.cancellation IS NULL
+GROUP BY c.order_id
+)
+SELECT MAX(cantidad_pizzas)  AS cantidad_maxima
+FROM tmp
+
 --7)Para cada cliente, ¿cuántas pizzas entregadas tenían al menos 1 cambio y cuántas no tenían cambios?
 
 --8)¿Cuántas pizzas se entregaron que tenían exclusiones y extras?
