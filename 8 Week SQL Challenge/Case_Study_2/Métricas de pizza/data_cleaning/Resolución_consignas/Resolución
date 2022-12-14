@@ -81,3 +81,8 @@ ORDER BY Hora
 
 --10)¿Cuál fue el volumen de pedidos para cada día de la semana?
 
+SELECT 
+to_char(order_time, 'Day') as Dia,
+COUNT(order_id) as cantidad_pizzas
+FROM pizza_runner.customer_orders 
+GROUP BY Dia
