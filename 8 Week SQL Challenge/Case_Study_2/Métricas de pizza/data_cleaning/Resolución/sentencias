@@ -72,4 +72,4 @@ WHERE duration LIKE '%minutes'
 
 ALTER TABLE pizza_runner."runner_orders"
 ALTER COLUMN  duration TYPE INTEGER 
-USING distance:: INTEGER 
+USING duration:: INTEGER 
