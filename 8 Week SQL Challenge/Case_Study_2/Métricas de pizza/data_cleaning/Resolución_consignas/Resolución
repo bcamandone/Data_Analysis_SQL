@@ -63,8 +63,12 @@ GROUP BY c.customer_id
 
 --8)¿Cuántas pizzas se entregaron que tenían exclusiones y extras?
 
-
-
+SELECT 
+SUM(CASE WHEN c.exclusions <> ''  AND c.extras <> '' THEN 1 ELSE 0 END) as pizzas_entregadas
+FROM pizza_runner.customer_orders c 
+JOIN pizza_runner.runner_orders r 
+ON (c.order_id = r.order_id)
+WHERE r.cancellation IS NULL
 
 --9)¿Cuál fue el volumen total de pizzas ordenadas para cada hora del día?
 
