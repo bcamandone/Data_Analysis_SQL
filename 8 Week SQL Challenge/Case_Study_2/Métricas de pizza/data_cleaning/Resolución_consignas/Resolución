@@ -17,4 +17,25 @@ GROUP BY runner_id
 
 --4)¿Cuántas pizzas de cada tipo se entregaron?
 
+SELECT n.pizza_name, COUNT(*) as  cantidad_pizzas
+FROM pizza_runner.customer_orders c 
+JOIN pizza_runner.pizza_names n 
+ON (c.pizza_id = n.pizza_id)
+JOIN pizza_runner.runner_orders r 
+ON (c.order_id = r.order_id)
+WHERE r.cancellation IS NULL
+GROUP BY n.pizza_name
+
 --5)¿Cuántas pizzas vegetarianas y amantes de la carne ordenó cada cliente?
+
+SELECT c.customer_id, 
+SUM(CASE WHEN n.pizza_name = 'Meatlovers' THEN 1 ELSE 0 END) as cantidad_Meatlovers,
+SUM(CASE WHEN n.pizza_name = 'Vegetarian' THEN 1 ELSE 0 END) as cantidad_Vegetarian
+FROM pizza_runner.customer_orders c 
+JOIN pizza_runner.pizza_names n 
+ON (c.pizza_id = n.pizza_id)
+GROUP BY c.customer_id
+ORDER BY c.customer_id
+
+
+
