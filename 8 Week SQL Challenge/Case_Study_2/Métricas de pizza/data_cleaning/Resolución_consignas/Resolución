@@ -37,5 +37,13 @@ ON (c.pizza_id = n.pizza_id)
 GROUP BY c.customer_id
 ORDER BY c.customer_id
 
+--6)¿Cuál fue el número máximo de pizzas entregadas en un solo pedido?
 
+--7)Para cada cliente, ¿cuántas pizzas entregadas tenían al menos 1 cambio y cuántas no tenían cambios?
+
+--8)¿Cuántas pizzas se entregaron que tenían exclusiones y extras?
+
+--9)¿Cuál fue el volumen total de pizzas ordenadas para cada hora del día?
+
+--10)¿Cuál fue el volumen de pedidos para cada día de la semana?
 
