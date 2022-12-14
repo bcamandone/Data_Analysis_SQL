@@ -52,9 +52,23 @@ FROM tmp
 
 --7)Para cada cliente, ¿cuántas pizzas entregadas tenían al menos 1 cambio y cuántas no tenían cambios?
 
+SELECT c.customer_id, 
+SUM(CASE WHEN c.exclusions <> ''  OR c.extras <> '' THEN 1 ELSE 0 END) as pizzas_con_cambios,
+SUM(CASE WHEN c.exclusions = '' AND c.extras = '' THEN 1 ELSE 0 END) as pizzas_sin_cambios
+FROM pizza_runner.customer_orders c 
+JOIN pizza_runner.runner_orders r 
+ON (c.order_id = r.order_id)
+WHERE r.cancellation IS NULL
+GROUP BY c.customer_id
+
 --8)¿Cuántas pizzas se entregaron que tenían exclusiones y extras?
 
+
+
+
 --9)¿Cuál fue el volumen total de pizzas ordenadas para cada hora del día?
+
+
 
 --10)¿Cuál fue el volumen de pedidos para cada día de la semana?
 
