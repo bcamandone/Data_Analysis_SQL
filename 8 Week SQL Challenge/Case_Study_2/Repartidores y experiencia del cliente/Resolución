@@ -26,14 +26,35 @@ GROUP BY runner_id
 
 --3)¿Existe alguna relación entre la cantidad de pizzas y el tiempo de preparación del pedido?
 
+WITH tmp AS (
+SELECT
+COUNT(c.order_id) as cantidad_pizzas,
+EXTRACT(MINUTE FROM age(r.pickup_time,c.order_time)) as tiempo_minutos
+FROM pizza_runner.customer_orders c
+JOIN  pizza_runner.runner_orders r 
+ON (c.order_id = r.order_id)
+WHERE r.cancellation IS NULL
+GROUP BY r.pickup_time,c.order_time
+)
+SELECT 
+cantidad_pizzas, ROUND(AVG(tiempo_minutos),2) as promedio_preparación
+FROM tmp
+GROUP BY cantidad_pizzas
 
-
-
-
-
-
+--"cantidad_pizzas" "promedio_preparación"
+-- 1                 12.0
+-- 2                 18.0
+-- 3                 29.0
+--A mayor cantidad de pizzas, mas tiempo de preparación. 
 
 --4)¿Cuál fue la distancia promedio recorrida por cada cliente?
+
+
+
+
+
+
+
 
 --5)¿Cuál fue la diferencia entre los tiempos de entrega más largos y más cortos para todos los pedidos?
 
