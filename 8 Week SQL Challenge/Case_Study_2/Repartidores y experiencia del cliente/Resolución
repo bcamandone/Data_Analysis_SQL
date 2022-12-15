@@ -1,8 +1,37 @@
 --1)¿Cuántos repartidores se inscribieron para cada período de 1 semana? (es decir, la semana comienza el 2021-01-01)
 
+SELECT 
+EXTRACT(WEEK FROM registration_date)  AS Semana,
+COUNT(runner_id) as cantidad_repartidores
+FROM pizza_runner.runners
+GROUP BY EXTRACT(WEEK  FROM registration_date) 
+
 --2)¿Cuál fue el tiempo promedio en minutos que tardó cada repartidor en llegar a la sede de Pizza Runner para recoger el pedido?
 
+WITH tmp AS (
+SELECT
+r.runner_id, c.order_id,r.pickup_time,c.order_time,
+EXTRACT(MINUTE FROM age(r.pickup_time,c.order_time)) as tiempo_minutos
+FROM pizza_runner.customer_orders c
+JOIN  pizza_runner.runner_orders r 
+ON (c.order_id = r.order_id)
+WHERE r.cancellation IS NULL
+GROUP BY r.runner_id, c.order_id,r.pickup_time,c.order_time
+)
+SELECT 
+runner_id,
+ROUND(AVG(tiempo_minutos),2) AS promedio_minutos
+FROM tmp
+GROUP BY runner_id
+
 --3)¿Existe alguna relación entre la cantidad de pizzas y el tiempo de preparación del pedido?
+
+
+
+
+
+
+
 
 --4)¿Cuál fue la distancia promedio recorrida por cada cliente?
 
