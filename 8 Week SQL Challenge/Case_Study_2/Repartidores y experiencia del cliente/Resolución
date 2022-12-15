@@ -66,8 +66,23 @@ FROM pizza_runner.runner_orders
 
 --6)¿Cuál fue la velocidad promedio de cada repartidor para cada entrega? ¿Observa alguna tendencia para estos valores?
 
+SELECT
+order_id,
+runner_id,
+distance, 
+duration,
+ROUND(AVG(distance::numeric/duration*60 :: numeric),2) AS  velocidad_promedio
+FROM  pizza_runner.runner_orders r 
+WHERE r.cancellation IS NULL
+GROUP BY runner_id,order_id,distance, duration
+
+-- El repartidor 1 tuvo una velocidad promedio de 37,5 km/h a 60 km/h.El repartidor 2 tenía una velocidad promedio de 35,1 km/h a 93,6 km/h. 
+-- Con la misma distancia (23,4 km), el pedido 4 se entregó a 35,1 km/h, mientras que el pedido 8 se entregó a 93,6 km/h. Se sugiere revisar los datos de origen. 
+-- El repartidor 3 tiene una velocidad promedio de 40 km/h.
+
+--7)¿Cuál es el porcentaje de entrega exitosa para cada repartidor?
 
 
 
 
---7)¿Cuál es el porcentaje de entrega exitosa para cada corredor?
+
