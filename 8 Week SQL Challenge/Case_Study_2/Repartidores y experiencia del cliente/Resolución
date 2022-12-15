@@ -60,11 +60,14 @@ GROUP BY c.customer_id
 
 --5)¿Cuál fue la diferencia entre los tiempos de entrega más largos y más cortos para todos los pedidos?
 
-
-
-
-
+SELECT
+MAX(duration) - MIN(duration) AS diferencia_tiempos_entrega
+FROM pizza_runner.runner_orders 
 
 --6)¿Cuál fue la velocidad promedio de cada repartidor para cada entrega? ¿Observa alguna tendencia para estos valores?
+
+
+
+
 
 --7)¿Cuál es el porcentaje de entrega exitosa para cada corredor?
