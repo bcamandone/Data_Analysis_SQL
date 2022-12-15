@@ -49,14 +49,21 @@ GROUP BY cantidad_pizzas
 
 --4)¿Cuál fue la distancia promedio recorrida por cada cliente?
 
-
-
-
-
-
-
+SELECT
+c.customer_id,
+ROUND(AVG(distance :: numeric),2) AS distancia_promedio
+FROM pizza_runner.customer_orders c
+JOIN  pizza_runner.runner_orders r 
+ON (c.order_id = r.order_id)
+WHERE r.cancellation IS NULL
+GROUP BY c.customer_id
 
 --5)¿Cuál fue la diferencia entre los tiempos de entrega más largos y más cortos para todos los pedidos?
+
+
+
+
+
 
 --6)¿Cuál fue la velocidad promedio de cada repartidor para cada entrega? ¿Observa alguna tendencia para estos valores?
 
