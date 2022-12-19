@@ -30,6 +30,13 @@ ORDER BY extras DESC
 
 --3)¿Cuál fue la exclusión más común?
 
+SELECT t.topping_name, COUNT(r.exclusions_toppings) AS exclusions 
+FROM pizza_runner.pizza_extras_exclusions r
+JOIN pizza_runner.pizza_toppings  t
+ON  (r.exclusions_toppings = t.topping_id)
+GROUP BY t.topping_name
+ORDER BY exclusions DESC
+
 --4)Genere un artículo de pedido para cada registro en la tabla customers_orders en el formato de uno de los siguientes: 
 --Meat Lovers / Meat Lovers - Exclude Beef / Meat Lovers - Extra Bacon / Meat Lovers - Exclude Cheese, Bacon - Extra Mushroom, Peppers
 
