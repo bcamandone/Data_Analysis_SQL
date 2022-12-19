@@ -51,8 +51,11 @@ Antes de comenzar a escribir sus consultas SQL, es posible que desee investigar 
 
 4) Genere un artículo de pedido para cada registro en la tabla pedidos_clientes en el formato de uno de los siguientes:
 Meat Lovers
+
 Meat Lovers - Exclude Beef
+
 Meat Lovers - Extra Bacon
+
 Meat Lovers - Exclude Cheese, Bacon - Extra Mushroom, Peppers
 
 5) Genere una lista de ingredientes separados por comas ordenados alfabéticamente para cada pedido de pizza de la tabla customer_orders y agregue 2x delante de cualquier ingrediente relevante
