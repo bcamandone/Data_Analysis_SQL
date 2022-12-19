@@ -82,7 +82,11 @@ GROUP BY runner_id,order_id,distance, duration
 
 --7)¿Cuál es el porcentaje de entrega exitosa para cada repartidor?
 
-
-
-
-
+SELECT 
+runner_id,
+COUNT(distance) AS entregado,
+COUNT(order_id) AS total_ordenes,
+100 * COUNT(distance) / COUNT(order_id) AS porcentaje_exito
+FROM  pizza_runner.runner_orders 
+GROUP BY runner_id
+ORDER BY runner_id
