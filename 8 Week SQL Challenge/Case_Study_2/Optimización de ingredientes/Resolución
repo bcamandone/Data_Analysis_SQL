@@ -1,8 +1,15 @@
 --Para responder a las preguntas de negocio, creamos una vista a partir de la tabla pizza_recipes, con una fila para cada topping de cada categoría de pizza.  
+--Creamos una segunda vista, con el numero de orden, la pizza pedida y si hubo extras o exclusiones 
 
 CREATE VIEW pizza_runner.pizza_recipes_clean AS
 SELECT pizza_id,  CAST(unnest(string_to_array(toppings, ',')) AS INT) AS topping_id
 FROM pizza_runner.pizza_recipes 
+
+CREATE VIEW pizza_runner.pizza_extras_exclusions AS
+SELECT order_id, pizza_id,  CAST(unnest(string_to_array(exclusions, ',')) AS INT) AS exclusions_toppings,
+CAST(unnest(string_to_array(extras, ',')) AS INT) AS extras_toppings
+FROM pizza_runner.customer_orders
+
 
 --1)¿Cuáles son los ingredientes estándar para cada pizza?
 
