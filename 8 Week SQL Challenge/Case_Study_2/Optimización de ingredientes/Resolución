@@ -1,0 +1,6 @@
+--Para responder a las preguntas de negocio, creamos una vista a partir de la tabla pizza_recipes, con una fila para cada topping de cada categoría de pizza.  
+
+CREATE VIEW pizza_runner.pizza_recipes_clean AS
+SELECT pizza_id,  CAST(unnest(string_to_array(toppings, ',')) AS INT) AS topping_id
+FROM pizza_runner.pizza_recipes 
+
