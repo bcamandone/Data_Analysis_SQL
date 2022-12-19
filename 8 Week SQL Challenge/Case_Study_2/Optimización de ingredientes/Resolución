@@ -10,10 +10,23 @@ SELECT order_id, pizza_id,  CAST(unnest(string_to_array(exclusions, ',')) AS INT
 CAST(unnest(string_to_array(extras, ',')) AS INT) AS extras_toppings
 FROM pizza_runner.customer_orders
 
-
 --1)¿Cuáles son los ingredientes estándar para cada pizza?
 
+SELECT pizza_name, 
+STRING_AGG(topping_name,  ', ') AS ingredientes
+FROM pizza_runner.pizza_names n JOIN pizza_runner.pizza_recipes_clean r
+ON (n.pizza_id = r.pizza_id) JOIN pizza_runner.pizza_toppings  t
+ON  (r.topping_id = t.topping_id)
+GROUP BY  pizza_name
+
 --2)¿Cuál fue el extra más comúnmente añadido?
+
+
+
+
+
+
+
 
 --3)¿Cuál fue la exclusión más común?
 
