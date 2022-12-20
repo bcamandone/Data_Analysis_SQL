@@ -48,13 +48,65 @@ ORDER BY exclusions DESC
 --4)Genere un artículo de pedido para cada registro en la tabla customers_orders en el formato de uno de los siguientes: 
 --Meat Lovers / Meat Lovers - Exclude Beef / Meat Lovers - Extra Bacon / Meat Lovers - Exclude Cheese, Bacon - Extra Mushroom, Peppers
 
+WITH extras AS (
+SELECT 
+e.Cod_ID,
+CONCAT('Extra  ', STRING_AGG(t.topping_name, ' , ')) AS detalle
+FROM 
+pizza_runner.pizza_extras_exclusions e
+JOIN  pizza_runner.pizza_toppings t
+ON (e.extras_toppings = t.topping_id)
+GROUP BY e.Cod_ID
+), 
+exclusions AS (
+SELECT 
+e.Cod_ID,
+CONCAT('Exclusion  ' , STRING_AGG(t.topping_name, ', ')) AS detalle
+FROM  pizza_runner.pizza_extras_exclusions e 
+JOIN  pizza_runner.pizza_toppings t
+ON (e.exclusions_toppings = t.topping_id)
+GROUP BY e.Cod_ID
+), 
+tmp AS (
+SELECT * FROM extras
+UNION
+SELECT * FROM exclusions
+)
+SELECT 
+c.order_id,
+c.Cod_ID,
+c.customer_id,
+c.pizza_id,
+c.order_time,
+CONCAT_WS(' - ', p.pizza_name, STRING_AGG(tmp.detalle, ' - ')) AS pizza_info
+FROM pizza_runner.customer_orders c
+LEFT JOIN tmp 
+ON (c.Cod_ID = tmp.Cod_ID)
+JOIN pizza_names p
+ON (c.pizza_id = p.pizza_id)
+GROUP BY
+c.order_id,
+c.Cod_ID,
+c.customer_id,
+c.pizza_id,
+c.order_time,
+p.pizza_name
+
+
+--5)Genere una lista de ingredientes separados por comas ordenados alfabéticamente para cada pedido de pizza de la tabla customer_orders y agregue 2x 
+--delante de cualquier ingrediente relevante Por ejemplo: "Amantes de la carne: 2xTocino, Carne de res, ... , Salami" /"Meat Lovers: 2xBacon, Beef, ... , Salami"
 
 
 
 
 
 
-
---5)Genere una lista de ingredientes separados por comas ordenados alfabéticamente para cada pedido de pizza de la tabla customer_orders y agregue 2x delante de cualquier ingrediente relevante Por ejemplo: "Amantes de la carne: 2xTocino, Carne de res, ... , Salami"
 
 --6)¿Cuál es la cantidad total de cada ingrediente utilizado en todas las pizzas entregadas ordenadas por el más frecuente primero?
+
+
+
+
+
+
+
