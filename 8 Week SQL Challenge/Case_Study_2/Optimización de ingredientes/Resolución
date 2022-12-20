@@ -104,9 +104,35 @@ p.pizza_name
 
 --6)¿Cuál es la cantidad total de cada ingrediente utilizado en todas las pizzas entregadas ordenadas por el más frecuente primero?
 
-
-
-
-
-
-
+WITH Ingredientes AS (
+  SELECT 
+    c.Cod_ID,
+    t.topping_name,
+    CASE
+      -- Ingredientra extra, suma 2
+      WHEN t.topping_id IN (
+          SELECT extras_toppings
+          FROM pizza_runner.pizza_extras_exclusions e
+          WHERE e.Cod_ID = c.Cod_ID) 
+      THEN 2
+      -- Si se excluye un ingrediente, entonces es 0
+      WHEN t.topping_id IN (
+          SELECT exclusions_toppings 
+          FROM pizza_runner.pizza_extras_exclusions e 
+          WHERE e.Cod_ID = c.Cod_ID)
+      THEN 0
+      -- sin extras ni exclusiones a cantidad es 1
+      ELSE 1
+    END AS cantidad
+FROM pizza_runner.customer_orders c	
+JOIN pizza_runner.pizza_recipes_clean r
+ON(c.pizza_id=r.pizza_id)
+JOIN pizza_runner.pizza_toppings  t
+ON (r.topping_id = t.topping_id)
+)
+SELECT 
+  topping_name,
+  SUM(cantidad) as cantidad_total
+FROM Ingredientes
+GROUP BY topping_name
+ORDER BY cantidad_total DESC
