@@ -1,9 +1,17 @@
---Para responder a las preguntas de negocio, creamos una vista a partir de la tabla pizza_recipes, con una fila para cada topping de cada categoría de pizza.  
---Creamos una segunda vista, con el numero de orden, la pizza pedida y si hubo extras o exclusiones 
+--Para responder a las preguntas de negocio, realizaremos la siguientes sentencias:
+
+--Agregamos una columna con un ID autoincremental  en la tabla customer_orders
+
+ALTER TABLE pizza_runner.customer_orders
+ADD COLUMN Cod_ID serial
+
+--Creamos una vista a partir de la tabla pizza_recipes, con una fila para cada topping de cada categoría de pizza.  
 
 CREATE VIEW pizza_runner.pizza_recipes_clean AS
 SELECT pizza_id,  CAST(unnest(string_to_array(toppings, ',')) AS INT) AS topping_id
 FROM pizza_runner.pizza_recipes 
+
+--Creamos una segunda vista, con el numero de orden, la pizza pedida y si hubo extras o exclusiones 
 
 CREATE VIEW pizza_runner.pizza_extras_exclusions AS
 SELECT order_id, pizza_id,  CAST(unnest(string_to_array(exclusions, ',')) AS INT) AS exclusions_toppings,
