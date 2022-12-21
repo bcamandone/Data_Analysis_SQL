@@ -85,13 +85,29 @@ VALUES
   (10,1,2);
 
 --4)Usando su tabla recién generada, ¿puede unir toda la información para formar una tabla que tenga la siguiente información para entregas exitosas? 
---customer_id,order_id,runner_id,rating,order_time,pickup_time,Time between order and pickup Delivery, duration Average speed,Total number of pizzas
+--customer_id,order_id,runner_id,rating,order_time,pickup_time,Time between order and pickup Delivery, duration, Average speed,Total number of pizzas
 
-
-
-
-
-
+SELECT 
+  c.customer_id,
+  c.order_id,
+  r.runner_id,
+  c.order_time,
+  r.pickup_time,
+  EXTRACT(MINUTE FROM age(r.pickup_time,c.order_time)) as Time_between,
+  r.duration,
+  ROUND(AVG(r.distance::numeric/r.duration::numeric*60), 1) AS avg_speed,
+  COUNT(c.order_id) AS pizza_count
+FROM pizza_runner.customer_orders c	
+JOIN pizza_runner.runner_orders r
+  ON (r.order_id = c.order_id)
+GROUP BY 
+  c.customer_id,
+  c.order_id,
+  r.runner_id,
+  c.order_time,
+  r.pickup_time, 
+  r.duration
+ORDER BY order_id
 
 
 --5)Si una pizza Meat Lovers costaba $12 y una vegetariana $10, precios fijos sin costo por extras, y a cada repartidor se le paga $0.30 por kilómetro recorrido, ¿cuánto dinero le queda a Pizza Runner después de estas entregas?
