@@ -85,8 +85,7 @@ VALUES
   (10,1,2);
 
 --4)Usando su tabla recién generada, ¿puede unir toda la información para formar una tabla que tenga la siguiente información para entregas exitosas? 
---customer_id order_id runner_id rating order_time pickup_time Time between order and pickup Delivery duration Average speed Total number of pizzas
-
+--customer_id,order_id,runner_id,rating,order_time,pickup_time,Time between order and pickup Delivery, duration Average speed,Total number of pizzas
 
 
 
