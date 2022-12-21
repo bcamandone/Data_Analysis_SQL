@@ -96,10 +96,47 @@ p.pizza_name
 --5)Genere una lista de ingredientes separados por comas ordenados alfabéticamente para cada pedido de pizza de la tabla customer_orders y agregue 2x 
 --delante de cualquier ingrediente relevante Por ejemplo: "Amantes de la carne: 2xTocino, Carne de res, ... , Salami" /"Meat Lovers: 2xBacon, Beef, ... , Salami"
 
-
-
-
-
+WITH ingredientes AS (
+  SELECT 
+    c.*,
+    n.pizza_name,
+    --Agregar '2x' delante de topping_names si su topping_id aparece en la vista extras y exclusiones 
+    CASE WHEN t.topping_id IN (
+          SELECT extras_toppings 
+          FROM pizza_runner.pizza_extras_exclusions e 
+          WHERE e.Cod_ID = c.Cod_ID)
+      THEN CONCAT('2x  ', t.topping_name)  
+	-- Excluir ingredientes si su topping_id aparece en la vista extras y exclusiones
+      WHEN t.topping_id IN (
+          SELECT exclusions_toppings 
+          FROM pizza_runner.pizza_extras_exclusions e 
+          WHERE e.Cod_ID = c.Cod_ID)
+      THEN ''
+      ELSE t.topping_name
+   END AS ingrediente	
+FROM pizza_runner.customer_orders c	
+JOIN pizza_runner.pizza_recipes_clean r
+ON(c.pizza_id = r.pizza_id)
+JOIN pizza_runner.pizza_toppings  t
+ON (r.topping_id = t.topping_id)
+JOIN pizza_runner.pizza_names n
+ON(c.pizza_id = n.pizza_id)	
+)
+SELECT 
+Cod_ID,
+order_id,
+customer_id,
+pizza_id,
+order_time,
+CONCAT(pizza_name , ': ', STRING_AGG(ingrediente, ', '))  AS lista_ingredientes
+FROM ingredientes
+GROUP BY 
+Cod_ID, 
+order_id,
+customer_id,
+pizza_id,
+order_time,
+pizza_name
 
 
 --6)¿Cuál es la cantidad total de cada ingrediente utilizado en todas las pizzas entregadas ordenadas por el más frecuente primero?
