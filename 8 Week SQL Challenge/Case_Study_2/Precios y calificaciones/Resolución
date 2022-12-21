@@ -1,7 +1,21 @@
 --1)Si una pizza Meat Lovers cuesta $ 12 y una vegetariana cuesta $ 10 y no hubo cargos por cambios, 
 --¿cuánto dinero ha ganado Pizza Runner hasta ahora si no hay tarifas de entrega?
 
+SELECT 
+SUM(CASE WHEN c.pizza_id = 1 THEN 12*1 ELSE 1*10 END) as ganancia 
+FROM pizza_runner.customer_orders c	
+JOIN pizza_runner.runner_orders r 
+ON (c.order_id = r.order_id)
+WHERE r.cancellation IS NULL
+
 --2)¿Qué pasa si hubo un cargo adicional de $ 1 por los extras de pizza? Nota: Agregar queso cuesta $1 extra
+
+
+
+
+
+
+
 
 --3)El equipo de Pizza Runner ahora quiere agregar un sistema de calificación adicional que permita a los clientes calificar a su repartidor. 
 --¿Cómo diseñaría una tabla adicional para este nuevo conjunto de datos? Genere un esquema para esta nueva tabla e inserte sus propios datos para las calificaciones de cada cliente exitoso. Nota: ordene entre 1 a 5.
