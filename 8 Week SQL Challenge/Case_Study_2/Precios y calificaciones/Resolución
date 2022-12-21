@@ -67,16 +67,32 @@ FROM ganancia_pizzas p
 --¿Cómo diseñaría una tabla adicional para este nuevo conjunto de datos? Genere un esquema para esta nueva tabla e inserte sus propios datos para las calificaciones de cada cliente exitoso. Nota: ordene entre 1 a 5.
 
 
-
-
-
-
-
-
-
-
+CREATE TABLE pizza_runner.ratings (
+  order_id INT,
+  runner_id INT,		
+  rating INT);
+  
+  
+INSERT INTO pizza_runner.ratings (order_id,runner_id, rating)
+VALUES 
+  (1,1,3),
+  (2,1,5),
+  (3,1,2),
+  (4,2,1),
+  (5,3,5),
+  (7,2,3),
+  (8,2,4),
+  (10,1,2);
 
 --4)Usando su tabla recién generada, ¿puede unir toda la información para formar una tabla que tenga la siguiente información para entregas exitosas? 
 --customer_id order_id runner_id rating order_time pickup_time Time between order and pickup Delivery duration Average speed Total number of pizzas
+
+
+
+
+
+
+
+
 
 --5)Si una pizza Meat Lovers costaba $12 y una vegetariana $10, precios fijos sin costo por extras, y a cada repartidor se le paga $0.30 por kilómetro recorrido, ¿cuánto dinero le queda a Pizza Runner después de estas entregas?
