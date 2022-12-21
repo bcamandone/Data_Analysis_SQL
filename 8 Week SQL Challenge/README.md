@@ -1,7 +1,7 @@
  
 ## SQL challenge 🔥
 
-Este repositorio contiene resueltos los 8 casos de estudio del desafío de lenguaje SQL de Data with Danny.
+Este repositorio contiene resueltos los casos de estudio del desafío de lenguaje SQL de Data with Danny.
 
 Motor de base de datos: Postgre SQL
 
