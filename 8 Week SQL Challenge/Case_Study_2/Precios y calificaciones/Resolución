@@ -13,10 +13,6 @@ WHERE r.cancellation IS NULL
 
 
 
-
-
-
-
 --3)El equipo de Pizza Runner ahora quiere agregar un sistema de calificación adicional que permita a los clientes calificar a su repartidor. 
 --¿Cómo diseñaría una tabla adicional para este nuevo conjunto de datos? Genere un esquema para esta nueva tabla e inserte sus propios datos para las calificaciones de cada cliente exitoso. Nota: ordene entre 1 a 5.
 
