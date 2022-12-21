@@ -110,4 +110,30 @@ GROUP BY
 ORDER BY order_id
 
 
---5)Si una pizza Meat Lovers costaba $12 y una vegetariana $10, precios fijos sin costo por extras, y a cada repartidor se le paga $0.30 por kilómetro recorrido, ¿cuánto dinero le queda a Pizza Runner después de estas entregas?
+--5)Si una pizza Meat Lovers costaba $12 y una vegetariana $10, precios fijos sin costo por extras, y a cada repartidor se le paga $0.30 por kilómetro recorrido, 
+--¿cuánto dinero le queda a Pizza Runner después de estas entregas?
+
+ WITH ganancias as(
+    SELECT c.order_id,
+        SUM(
+            CASE
+                WHEN c.pizza_id = 1 THEN 12 * 1
+                ELSE 1 * 10
+            END
+        ) as ganancia
+    FROM pizza_runner.customer_orders c
+        JOIN pizza_runner.runner_orders r ON (c.order_id = r.order_id)
+    WHERE r.cancellation IS NULL
+    GROUP BY c.order_id
+),
+costo AS (
+    SELECT order_id,
+        SUM(distance * 0.30) as costo_repartidores
+    FROM pizza_runner.runner_orders
+    WHERE cancellation IS NULL
+    GROUP BY order_id
+)
+SELECT SUM(ganancia) - SUM(costo_repartidores) AS ganancia_total
+FROM ganancias g
+    JOIN costo o ON (g.order_id = o.order_id)            
+
