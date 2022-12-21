@@ -77,23 +77,23 @@ Nota: ordene entre 1 a 5.
 4) Usando su tabla recién generada, ¿puede unir toda la información para formar una tabla que tenga la siguiente información para entregas exitosas?
 customer_id
 
-order_id
+  order_id
 
-runner_id
+  runner_id
 
-rating
+  rating
 
-order_time
+  order_time
 
-pickup_time
+  pickup_time
 
-Time between order and pickup
+  Time between order and pickup
 
-Delivery duration
+  Delivery duration
 
-Average speed
+  Average speed
 
-Total number of pizzas
+  Total number of pizzas
 
 5) Si una pizza Meat Lovers costaba $12 y una vegetariana $10, precios fijos sin costo por extras, y a cada repartidor se le paga $0.30 por kilómetro recorrido, ¿cuánto dinero le queda a Pizza Runner después de estas entregas?
 
