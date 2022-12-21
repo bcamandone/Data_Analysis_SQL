@@ -1,1 +1,1 @@
-
+En el archivo Resolución se encuentran las sentencias SQL que responden a las preguntas de negocio correspondiente al modulo D.Precios y calificaciones
