@@ -40,7 +40,13 @@ Con base en los 8 clientes de muestra provistos en la muestra de la tabla de sus
 
 El equipo de Foodie-Fi quiere crear una nueva tabla de pagos para el año 2020 que incluya los montos pagados por cada cliente en la tabla de suscripciones con los siguientes requisitos:
 
+- Los pagos mensuales siempre se realizan el mismo día del mes que la fecha de inicio original de cualquier plan de pago mensual
 
+- Las actualizaciones de planes básicos a mensuales o profesionales se reducen por el monto pagado actual en ese mes y comienzan de inmediato
+
+- Las actualizaciones de pro mensual a pro anual se pagan al final del período de facturación actual y también comienzan al final del período del mes
+
+- Una vez que un cliente se da de baja, ya no realizará pagos
 
 
 
