@@ -35,3 +35,9 @@ Con base en los 8 clientes de muestra provistos en la muestra de la tabla de sus
 10)¿Puede desglosar este valor promedio en períodos de 30 días (es decir, 0-30 días, 31-60 días, etc.)
 
 11)¿Cuántos clientes bajaron de un plan mensual profesional a un plan mensual básico en 2020?
+
+## B. Desafío sobre pagos 
+
+
+
+
