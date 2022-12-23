@@ -7,3 +7,7 @@ Danny y sus amigos lanzaron una nueva empresa llamada "Food-Fi" en 2020 y comenz
 Este estudio de caso se centra en el uso de datos digitales de estilo de suscripción para responder algunas preguntas importantes, como el rendimiento comercial, los pagos y el recorrido del cliente.
 
 ## Consignas:
+
+##A. Viaje del cliente
+
+Con base en los 8 clientes de muestra provistos en la muestra de la tabla de suscripciones, escriba una breve descripción sobre el viaje de incorporación de cada cliente.
