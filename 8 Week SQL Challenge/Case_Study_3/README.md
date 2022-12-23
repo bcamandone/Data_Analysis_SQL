@@ -49,3 +49,13 @@ El equipo de Foodie-Fi quiere crear una nueva tabla de pagos para el año 2020 q
 - Una vez que un cliente se da de baja, ya no realizará pagos
 
 ## D. Preguntas "fuera de la caja"
+
+1)¿Cómo calcularía la tasa de crecimiento de Foodie-Fi?
+
+2)¿Qué métricas clave recomendaría a la gerencia de Foodie-Fi para realizar un seguimiento a lo largo del tiempo para evaluar el rendimiento de su negocio en general?
+
+3)¿Cuáles son algunos recorridos o experiencias clave de los clientes que analizaría más a fondo para mejorar la retención de clientes?
+
+4)Si el equipo de Foodie-Fi creara una encuesta de salida para los clientes que desean cancelar su suscripción, ¿qué preguntas incluiría en la encuesta?
+
+5)¿Qué palancas comerciales podría usar el equipo de Foodie-Fi para reducir la tasa de abandono de clientes? ¿Cómo validarías la eficacia de tus ideas?
