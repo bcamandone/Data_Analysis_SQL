@@ -38,6 +38,9 @@ Con base en los 8 clientes de muestra provistos en la muestra de la tabla de sus
 
 ## B. Desafío sobre pagos 
 
+El equipo de Foodie-Fi quiere crear una nueva tabla de pagos para el año 2020 que incluya los montos pagados por cada cliente en la tabla de suscripciones con los siguientes requisitos:
+
+
 
 
 
