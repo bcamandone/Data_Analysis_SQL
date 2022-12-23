@@ -11,3 +11,5 @@ Este estudio de caso se centra en el uso de datos digitales de estilo de suscrip
 ## A. Viaje del cliente
 
 Con base en los 8 clientes de muestra provistos en la muestra de la tabla de suscripciones, escriba una breve descripción sobre el viaje de incorporación de cada cliente.
+
+## B. Preguntas de análisis de datos
