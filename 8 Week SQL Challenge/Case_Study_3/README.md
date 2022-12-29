@@ -14,6 +14,15 @@ Este estudio de caso se centra en el uso de datos digitales de estilo de suscrip
 
 Con base en los 8 clientes de muestra provistos en la muestra de la tabla de suscripciones, escriba una breve descripción sobre el viaje de incorporación de cada cliente.
 
+
+
+
+
+![5](https://user-images.githubusercontent.com/86261762/209961099-f667d263-af15-42ff-b04c-a953837c7c7d.png)
+
+
+
+
 ## B. Preguntas de análisis de datos
 
 1)¿Cuántos clientes ha tenido Foodie-Fi?
