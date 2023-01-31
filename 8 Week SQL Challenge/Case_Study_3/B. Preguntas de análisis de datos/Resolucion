@@ -1,21 +1,27 @@
-1)¿Cuántos clientes ha tenido Foodie-Fi?
+--1)¿Cuántos clientes ha tenido Foodie-Fi?
 
-2)¿Cuál es la distribución mensual de los valores de la fecha de inicio del plan de prueba para nuestro conjunto de datos? Utilice el inicio del mes como el grupo por valor
 
-3)¿Qué valores de plan start_date ocurren después del año 2020 para nuestro conjunto de datos? Mostrar el desglose por conteo de eventos para cada plan_name
 
-4)¿Cuál es el recuento de clientes y el porcentaje de clientes que se han retirado redondeado a 1 decimal?
 
-5)¿Cuántos clientes abandonaron inmediatamente después de su prueba gratuita inicial? ¿Qué porcentaje se redondea al número entero más cercano?
 
-6)¿Cuál es el número y porcentaje de planes de clientes después de su prueba gratuita inicial?
 
-7)¿Cuál es el conteo de clientes y el desglose porcentual de los 5 valores de plan_name al 2020-12-31?
+--2)¿Cuál es la distribución mensual de los valores de la fecha de inicio del plan de prueba para nuestro conjunto de datos? 
+--Utilice el inicio del mes como el grupo por valor
 
-8)¿Cuántos clientes se han actualizado a un plan anual en 2020?
+--3)¿Qué valores de plan start_date ocurren después del año 2020 para nuestro conjunto de datos? Mostrar el desglose por conteo de eventos para cada plan_name
 
-9)¿Cuántos días en promedio le toma a un cliente un plan anual desde el día en que se une a Foodie-Fi?
+--4)¿Cuál es el recuento de clientes y el porcentaje de clientes que se han retirado redondeado a 1 decimal?
 
-10)¿Puede desglosar este valor promedio en períodos de 30 días (es decir, 0-30 días, 31-60 días, etc.)
+--5)¿Cuántos clientes abandonaron inmediatamente después de su prueba gratuita inicial? ¿Qué porcentaje se redondea al número entero más cercano?
 
-11)¿Cuántos clientes bajaron de un plan mensual profesional a un plan mensual básico en 2020?
+--6)¿Cuál es el número y porcentaje de planes de clientes después de su prueba gratuita inicial?
+
+--7)¿Cuál es el conteo de clientes y el desglose porcentual de los 5 valores de plan_name al 2020-12-31?
+
+--8)¿Cuántos clientes se han actualizado a un plan anual en 2020?
+
+--9)¿Cuántos días en promedio le toma a un cliente un plan anual desde el día en que se une a Foodie-Fi?
+
+--10)¿Puede desglosar este valor promedio en períodos de 30 días (es decir, 0-30 días, 31-60 días, etc.)
+
+--11)¿Cuántos clientes bajaron de un plan mensual profesional a un plan mensual básico en 2020?
