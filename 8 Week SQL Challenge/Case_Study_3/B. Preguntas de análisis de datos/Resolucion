@@ -16,6 +16,13 @@ ORDER BY mes
 
 --3)¿Qué valores de plan start_date ocurren después del año 2020 para nuestro conjunto de datos? Mostrar el desglose por conteo de eventos para cada plan_name
 
+SELECT date_part('year', start_date) AS año, plan_name, count(*) as cantidad
+FROM foodie_fi.subscriptions s
+JOIN foodie_fi.plans p
+ON (s.plan_id = p.plan_id)
+WHERE date_part('year', start_date) > 2020
+GROUP BY plan_name, date_part('year', start_date)
+
 --4)¿Cuál es el recuento de clientes y el porcentaje de clientes que se han retirado redondeado a 1 decimal?
 
 --5)¿Cuántos clientes abandonaron inmediatamente después de su prueba gratuita inicial? ¿Qué porcentaje se redondea al número entero más cercano?
