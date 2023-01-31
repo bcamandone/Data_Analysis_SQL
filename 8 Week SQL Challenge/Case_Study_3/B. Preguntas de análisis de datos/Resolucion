@@ -1,12 +1,14 @@
 --1)¿Cuántos clientes ha tenido Foodie-Fi?
 
-
-
-
-
+SELECT COUNT(DISTINCT(customer_id)) AS cantidad_clientes
+FROM foodie_fi.subscriptions 
 
 --2)¿Cuál es la distribución mensual de los valores de la fecha de inicio del plan de prueba para nuestro conjunto de datos? 
 --Utilice el inicio del mes como el grupo por valor
+
+
+
+
 
 --3)¿Qué valores de plan start_date ocurren después del año 2020 para nuestro conjunto de datos? Mostrar el desglose por conteo de eventos para cada plan_name
 
