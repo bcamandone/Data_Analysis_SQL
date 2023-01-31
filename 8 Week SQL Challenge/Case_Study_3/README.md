@@ -8,6 +8,8 @@ Danny y sus amigos lanzaron una nueva empresa llamada "Food-Fi" en 2020 y comenz
 
 Este estudio de caso se centra en el uso de datos digitales de estilo de suscripción para responder algunas preguntas importantes, como el rendimiento comercial, los pagos y el recorrido del cliente.
 
+Los clientes pueden suscribirse a una prueba gratuita inicial de 7 días que continuará automáticamente con el plan de suscripción mensual pro a menos que cancelen, rebajen a la versión básica o actualicen a un plan pro anual en cualquier momento durante la prueba.
+
 ## Consignas:
 
 ## A. Viaje del cliente
