@@ -7,12 +7,12 @@ ORDER BY  customer_id, start_date
 
 
 El cliente 1 se registró para una prueba gratuita de 7 días el 08/01/2020.
-Después de ese tiempo, no canceló la suscripción, por lo que el sistema automáticamente lo actualizó al plan básico mensual el 08/08/2020.
+Después de ese tiempo, no canceló la suscripción,  y opto por un plan básico mensual el 08/08/2020.
 
 El cliente 2 se registró para una prueba gratuita de 7 días el 20/09/2020. Después de ese tiempo, actualizó al plan pro anual el 27/09/2020.
 
 El cliente 11 se registró para una prueba gratuita de 7 días el 19/11/2020. Pasado ese tiempo, canceló la suscripción el 26/11/2020.
 
-El cliente 13 se registró para una prueba gratuita de 7 días el 15/12/2020. Después de ese tiempo, no canceló la suscripción, por lo que el sistema 
-automáticamente lo actualizó al plan básico mensual el 22/12/2020. Continuó usando ese plan, y el 29/03/2020se actualizó al plan mensual pro.
+El cliente 13 se registró para una prueba gratuita de 7 días el 15/12/2020. Después de ese tiempo, no canceló la suscripción, y lo actualizó al 
+plan básico mensual el 22/12/2020. Continuó usando ese plan, y el 29/03/2020se actualizó al plan mensual pro.
 
