@@ -36,6 +36,8 @@ ON (s.plan_id = p.plan_id)
 
 
 
+
+
 --6)¿Cuál es el número y porcentaje de planes de clientes después de su prueba gratuita inicial?
 
 --7)¿Cuál es el conteo de clientes y el desglose porcentual de los 5 valores de plan_name al 2020-12-31?
