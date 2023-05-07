@@ -29,7 +29,7 @@ FROM public.jugadores
 
 e) Nombre del Jugador mejor pagado (transferencia) en el conjunto de datos.
 
-SELECT "Player Name", MAX("Player Market Value (M))") as count_paid
+SELECT "Player Name", MAX("Fees Paid for Player (M)") as count_paid
 from public.jugadores
 group by "Player Name"
 order by count_paid desc
