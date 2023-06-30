@@ -30,7 +30,7 @@ Solución:
 
 WITH ventas AS(
 SELECT s.id_producto, s."año" AS primer_año, s.cantidad, s.precio,
-DENSE_RANK() OVER(PARTITION BY s.id_producto ORDER BY s."año" ASC) as rank_ventas
+RANK() OVER(PARTITION BY s.id_producto ORDER BY s."año" ASC) as rank_ventas
 FROM public."Sales1" s
 JOIN public."Product1" p
 ON s.id_producto = p.id_producto
