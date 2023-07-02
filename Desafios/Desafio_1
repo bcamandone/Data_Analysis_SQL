@@ -32,7 +32,6 @@ WITH ventas AS(
 SELECT s.id_producto, s."año" AS primer_año, s.cantidad, s.precio,
 RANK() OVER(PARTITION BY s.id_producto ORDER BY s."año" ASC) as rank_ventas
 FROM public."Sales1" s
-
 )
 SELECT id_producto, primer_año, cantidad, precio
 FROM ventas 
