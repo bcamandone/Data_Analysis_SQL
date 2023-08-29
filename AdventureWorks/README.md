@@ -1,2 +1,4 @@
 
-![esquema](https://user-images.githubusercontent.com/86261762/235193476-332a7601-7385-44e5-92bf-402ccee81406.png)
+![1](https://github.com/bcamandone/Data_Analysis_SQL/assets/86261762/3bfee303-d396-4dcd-a6df-f46b0055bdb1)
+
+
