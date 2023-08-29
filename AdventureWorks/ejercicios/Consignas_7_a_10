@@ -30,7 +30,7 @@ SELECT st.Name, SUM(so.TotalDue) AS total_vendido
 FROM Sales.SalesOrderHeader so
 JOIN Sales.SalesTerritory st
 ON so.TerritoryID = st.TerritoryID
-GROUP BY st.TerritoryID, st.Name
+GROUP BY st.Name
 ORDER BY total_vendido DESC
 
 
