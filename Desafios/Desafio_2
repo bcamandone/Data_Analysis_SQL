@@ -44,12 +44,13 @@ WITH tmp AS
 )
 SELECT DISTINCT MES, employee_id,
        CASE WHEN amount > salario_promedio THEN 'mayor'
-       WHEN amount = salario_promedio THEN 'igual'
-ELSE 'menor'
-END AS comparacion_promedio_compañia,
-CASE WHEN amount > salario_promedio_departamento  THEN 'mayor'
-       WHEN amount = salario_promedio_departamento THEN 'igual'
-ELSE 'menor'
-END AS comparacion_promedio_departamento
+            WHEN amount = salario_promedio THEN 'igual'
+            ELSE 'menor'
+       END AS comparacion_promedio_compañia,
+
+       CASE WHEN amount > salario_promedio_departamento  THEN 'mayor'
+           WHEN amount = salario_promedio_departamento THEN 'igual'
+           ELSE 'menor'
+       END AS comparacion_promedio_departamento
 FROM tmp
 ORDER BY 1 DESC
