@@ -75,13 +75,32 @@ GROUP BY next_plan
 
 --7)¿Cuál es el conteo de clientes y el desglose porcentual de los 5 valores de plan_name al 2020-12-31?
 
+WITH plansDate AS (
+  SELECT 
+    s.customer_id,
+    s.start_date,
+	p.plan_id,
+    p.plan_name,
+    LEAD(s.start_date) OVER(PARTITION BY s.customer_id ORDER BY s.start_date) AS next_date
+  FROM foodie_fi.subscriptions s
+  JOIN foodie_fi.plans p ON s.plan_id = p.plan_id
+)
+
+SELECT 
+  plan_id,
+  plan_name,
+  COUNT(*) AS customers,
+  CAST(100*COUNT(*) AS FLOAT) 
+      / (SELECT COUNT(DISTINCT customer_id) FROM foodie_fi.subscriptions) AS rate
+FROM plansDate
+WHERE (next_date IS NOT NULL AND (start_date < '2020-12-31' AND next_date > '2020-12-31'))
+  OR (next_date IS NULL AND start_date < '2020-12-31')
+GROUP BY plan_id, plan_name
+ORDER BY plan_id
+
+--8)¿Cuántos clientes han actualizado a un plan anual en 2020?
 
 
-
-
-
-
---8)¿Cuántos clientes se han actualizado a un plan anual en 2020?
 
 --9)¿Cuántos días en promedio le toma a un cliente un plan anual desde el día en que se une a Foodie-Fi?
 
