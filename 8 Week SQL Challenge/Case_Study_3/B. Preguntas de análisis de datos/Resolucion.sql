@@ -34,11 +34,32 @@ ON (s.plan_id = p.plan_id)
 
 --5)¿Cuántos clientes abandonaron inmediatamente después de su prueba gratuita inicial? ¿Qué porcentaje se redondea al número entero más cercano?
 
+WITH nextPlan AS (
+  SELECT 
+    s.customer_id,
+    s.start_date,
+    p.plan_name,
+    LEAD(p.plan_name) OVER(PARTITION BY s.customer_id ORDER BY p.plan_id) AS next_plan
+  FROM foodie_fi.subscriptions s
+  JOIN foodie_fi.plans p ON s.plan_id = p.plan_id
+)
 
-
-
+SELECT 
+  COUNT(*) AS clientes_abandonaron,
+  100*COUNT(*) / (SELECT COUNT(DISTINCT customer_id) FROM foodie_fi.subscriptions) AS porcentaje_abandono
+FROM nextPlan
+WHERE plan_name = 'trial' 
+  AND next_plan = 'churn'
 
 --6)¿Cuál es el número y porcentaje de planes de clientes después de su prueba gratuita inicial?
+
+
+
+
+
+
+
+
 
 --7)¿Cuál es el conteo de clientes y el desglose porcentual de los 5 valores de plan_name al 2020-12-31?
 
