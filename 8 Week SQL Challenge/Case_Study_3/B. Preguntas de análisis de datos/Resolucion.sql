@@ -109,11 +109,28 @@ WHERE p.plan_name = 'pro annual'
 
 --9)¿Cuántos días en promedio le toma a un cliente cambiar a un plan anual desde el día en que se une a Foodie-Fi?
 
+WITH trialPlan AS (
+  SELECT 
+    s.customer_id,
+    s.start_date AS trial_date
+  FROM foodie_fi.subscriptions s
+  JOIN foodie_fi.plans p ON s.plan_id = p.plan_id
+  WHERE p.plan_name = 'trial'
+),
+annualPlan AS (
+  SELECT 
+    s.customer_id,
+    s.start_date AS annual_date
+  FROM foodie_fi.subscriptions s
+  JOIN foodie_fi.plans p ON s.plan_id = p.plan_id
+  WHERE p.plan_name = 'pro annual'
+)
 
-
-
-
-
+SELECT 
+  round(AVG(extract(day from annual_date::timestamp - trial_date::timestamp)),0)
+FROM trialPlan t
+JOIN annualPlan a 
+ON t.customer_id = a.customer_id
 
 --10)¿Puede desglosar este valor promedio en períodos de 30 días (es decir, 0-30 días, 31-60 días, etc.)
 
