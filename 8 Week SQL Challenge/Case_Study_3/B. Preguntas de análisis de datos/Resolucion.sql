@@ -134,9 +134,39 @@ ON t.customer_id = a.customer_id
 
 --10)¿Puede desglosar este valor promedio en períodos de 30 días (es decir, 0-30 días, 31-60 días, etc.)
 
-
-
-
+WITH trialPlan AS (
+  SELECT 
+    s.customer_id,
+    s.start_date AS trial_date
+  FROM foodie_fi.subscriptions s
+  JOIN foodie_fi.plans p ON s.plan_id = p.plan_id
+  WHERE p.plan_name = 'trial'
+),
+annualPlan AS (
+  SELECT 
+    s.customer_id,
+    s.start_date AS annual_date
+  FROM foodie_fi.subscriptions s
+  JOIN foodie_fi.plans p ON s.plan_id = p.plan_id
+  WHERE p.plan_name = 'pro annual'
+),
+datesDiff AS(
+SELECT 
+extract(day from annual_date::timestamp - trial_date::timestamp) AS diferencia_dias
+FROM trialPlan t
+JOIN annualPlan a 
+ON t.customer_id = a.customer_id
+)
+SELECT
+COUNT(*) AS cantidad,
+CASE WHEN  diferencia_dias >= 0 AND diferencia_dias <= 30 THEN '0-30 días'
+     WHEN  diferencia_dias > 30 AND diferencia_dias <= 60 THEN '31-60 días'
+	 WHEN  diferencia_dias > 60 AND diferencia_dias <= 90 THEN '61-90 días'
+	 ELSE 'Mayor a 90 días' END AS clasificacion_dias
+FROM datesDiff
+GROUP BY 2
 
 
 --11)¿Cuántos clientes bajaron de un plan mensual profesional a un plan mensual básico en 2020?
+
+
