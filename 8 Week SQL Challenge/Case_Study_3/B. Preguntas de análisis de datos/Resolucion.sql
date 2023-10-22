@@ -166,7 +166,22 @@ CASE WHEN  diferencia_dias >= 0 AND diferencia_dias <= 30 THEN '0-30 días'
 FROM datesDiff
 GROUP BY 2
 
-
 --11)¿Cuántos clientes bajaron de un plan mensual profesional a un plan mensual básico en 2020?
 
+WITH nextPlan AS (
+  SELECT 
+    s.customer_id,
+    s.start_date,
+    p.plan_name,
+    LEAD(p.plan_name) OVER(PARTITION BY s.customer_id ORDER BY p.plan_id) AS next_plan
+  FROM foodie_fi.subscriptions s
+  JOIN foodie_fi.plans p ON s.plan_id = p.plan_id
+)
+SELECT 
+  COUNT(*) AS cantidad
+FROM nextPlan
+WHERE plan_name = 'pro monthly'
+  AND next_plan = 'basic monthly'
+  AND EXTRACT(YEAR FROM start_date ) = 2020
+GROUP BY next_plan
 
