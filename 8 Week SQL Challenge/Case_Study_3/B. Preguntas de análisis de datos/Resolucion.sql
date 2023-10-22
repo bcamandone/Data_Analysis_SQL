@@ -100,10 +100,26 @@ ORDER BY plan_id
 
 --8)¿Cuántos clientes han actualizado a un plan anual en 2020?
 
+SELECT 
+  COUNT(DISTINCT customer_id) AS clientes
+FROM  foodie_fi.subscriptions s
+JOIN foodie_fi.plans p ON s.plan_id = p.plan_id
+WHERE p.plan_name = 'pro annual'
+  AND EXTRACT(YEAR FROM s.start_date ) = 2020
+
+--9)¿Cuántos días en promedio le toma a un cliente cambiar a un plan anual desde el día en que se une a Foodie-Fi?
 
 
---9)¿Cuántos días en promedio le toma a un cliente un plan anual desde el día en que se une a Foodie-Fi?
+
+
+
+
 
 --10)¿Puede desglosar este valor promedio en períodos de 30 días (es decir, 0-30 días, 31-60 días, etc.)
+
+
+
+
+
 
 --11)¿Cuántos clientes bajaron de un plan mensual profesional a un plan mensual básico en 2020?
