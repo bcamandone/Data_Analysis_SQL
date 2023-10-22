@@ -28,8 +28,8 @@
 
 5)
 En la encuesta de salida, buscar los motivos más comunes por los cuales los clientes cancelaron la suscripción.
-Precio: aumentar el número de descuentos en algunas temporadas del año, ampliar el tiempo de prueba o añadir más beneficios a los clientes
-Calidad del servicio: trabaje con el departamento correspondiente para solucionar el problema.
+Precio: analizar descuentos, ampliar el tiempo de prueba 
+Calidad del servicio: trabajar con el departamento correspondiente para solucionar el problema.
 Encontré una alternativa: hacer un análisis de la competencia.
 Para validar la efectividad de esas ideas, verifique:
 tasa de abandono
