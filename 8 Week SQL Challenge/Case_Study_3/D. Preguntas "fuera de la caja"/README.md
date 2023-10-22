@@ -19,6 +19,7 @@
 4)
 ¿Cuál es el motivo principal de la cancelación?
 
+
 - Precio
 - Cuestiones técnicas
 - Atención al cliente
