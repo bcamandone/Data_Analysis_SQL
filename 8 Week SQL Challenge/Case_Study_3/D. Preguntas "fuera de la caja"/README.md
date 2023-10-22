@@ -18,11 +18,12 @@
 
 4)
 ¿Cuál es el motivo principal de la cancelación?
-Precio
-Cuestiones técnicas
-Atención al cliente
-Encontré una alternativa
-Otros: por favor especifique
+
+- Precio
+- Cuestiones técnicas
+- Atención al cliente
+- Encontré una alternativa
+- Otros: por favor especifique
 
 5)
 En la encuesta de salida, buscar los motivos más comunes por los cuales los clientes cancelaron la suscripción.
