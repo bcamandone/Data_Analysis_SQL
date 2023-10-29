@@ -47,26 +47,3 @@ Con base en los 8 clientes de muestra provistos en la muestra de la tabla de sus
 
 11)¿Cuántos clientes bajaron de un plan mensual profesional a un plan mensual básico en 2020?
 
-## C. Desafío sobre pagos 
-
-El equipo de Foodie-Fi quiere crear una nueva tabla de pagos para el año 2020 que incluya los montos pagados por cada cliente en la tabla de suscripciones con los siguientes requisitos:
-
-- Los pagos mensuales siempre se realizan el mismo día del mes que la fecha de inicio original de cualquier plan de pago mensual
-
-- Las actualizaciones de planes básicos a mensuales o profesionales se reducen por el monto pagado actual en ese mes y comienzan de inmediato
-
-- Las actualizaciones de pro mensual a pro anual se pagan al final del período de facturación actual y también comienzan al final del período del mes
-
-- Una vez que un cliente se da de baja, ya no realizará pagos
-
-## D. Preguntas "fuera de la caja"
-
-1)¿Cómo calcularía la tasa de crecimiento de Foodie-Fi?
-
-2)¿Qué métricas clave recomendaría a la gerencia de Foodie-Fi para realizar un seguimiento a lo largo del tiempo para evaluar el rendimiento de su negocio en general?
-
-3)¿Cuáles son algunos recorridos o experiencias clave de los clientes que analizaría más a fondo para mejorar la retención de clientes?
-
-4)Si el equipo de Foodie-Fi creara una encuesta de salida para los clientes que desean cancelar su suscripción, ¿qué preguntas incluiría en la encuesta?
-
-5)¿Qué palancas comerciales podría usar el equipo de Foodie-Fi para reducir la tasa de abandono de clientes? ¿Cómo validarías la eficacia de tus ideas?
