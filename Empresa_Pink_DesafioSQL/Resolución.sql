@@ -1,4 +1,4 @@
---MOTOR DE BASE DE DATOS UTILIZADO: POSTGRE SQL 
+--MOTOR DE BASE DE DATOS UTILIZADO: PostgreSQL 
 
 --1. ¿Cuál fue la cantidad total vendida de todos los productos?
 SELECT
