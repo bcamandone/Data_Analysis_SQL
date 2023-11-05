@@ -1,5 +1,6 @@
 ## Responder a las siguientes preguntas utilizando Lenguaje SQL
 
+## Basic SQL:
 
 1.¿Cuál fue la cantidad total vendida de todos los productos?
 
@@ -27,6 +28,8 @@ descuentos?
 12. ¿Cuáles son los 3 productos mas vendidos en función a los ingresos totales? 
 
 13. ¿Cuál es la cantidad total vendida, los ingresos brutos y el descuento de cada segmento de producto?
+
+## Intermediate SQL
 
 14. ¿Cuál es el producto más vendido de cada categoría?
 
