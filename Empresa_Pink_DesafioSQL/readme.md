@@ -6,8 +6,7 @@
 2. ¿Cuál es el ingreso total generado por todos los productos antes de los
 descuentos?
 
-3. ¿Cuál es el ingreso medio generado por todos los productos antes de
-descuentos?
+3. ¿Cuál es el ingreso promedio generado por todos los productos antes de los descuentos?
 
 4. ¿Cuál es el ingreso total generado por cada producto antes de los descuentos?
 
