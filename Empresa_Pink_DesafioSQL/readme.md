@@ -22,7 +22,7 @@ descuentos?
 
 10. ¿Cuál es el valor de descuento promedio por transacción?
 
-11. ¿Cuál es el ingreso promedio neto para transacciones de miembros “t”?
+11. ¿Cuál es el ingreso promedio neto por transacción  para  miembros “t”?
 
 12. ¿Cuáles son los 3 productos principales por ingresos totales (con más ingresos) antes del
 descuento?
