@@ -8,7 +8,7 @@ descuentos?
 
 3. ¿Cuál es el ingreso promedio generado por todos los productos antes de los descuentos?
 
-4. ¿Cuál es el ingreso total generado por cada producto antes de los descuentos?
+4. ¿Cuál es el ingreso total generado por cada producto antes de los descuentos? Mostrar el nombre del producto y el ingreso, ordenar de mayor a menor por ingreso total
 
 5. ¿Cuál es el porcentaje total de descuento (sobre el ingreso total) para todos los productos?
 
