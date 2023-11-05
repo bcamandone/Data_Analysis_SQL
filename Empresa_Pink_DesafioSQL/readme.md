@@ -14,8 +14,7 @@ descuentos?
 
 6. ¿Cuál es el porcentaje total de descuento (sobre el ingreso total) por cada producto?
 
-7. ¿Cuántas transacciones únicas hubo? (El campo de transacciones es el id_txn de
-la tabla ventas)
+7. ¿Cuántas transacciones únicas hubo? 
 
 8. ¿Cuáles son las ventas totales brutas de cada transacción?
 
