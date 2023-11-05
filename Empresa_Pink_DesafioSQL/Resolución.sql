@@ -3,7 +3,7 @@
 --1. ¿Cuál fue la cantidad total vendida de todos los productos?
 SELECT
 SUM(qty) AS cantidad_productos
-FROM public.ventas;
+FROM public.ventas
 
 --2. ¿Cuál es el ingreso total generado por todos los productos antes de los descuentos?
 SELECT
