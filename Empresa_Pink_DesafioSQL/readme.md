@@ -24,8 +24,7 @@ descuentos?
 
 11. ¿Cuál es el ingreso promedio neto por transacción  para  miembros “t”?
 
-12. ¿Cuáles son los 3 productos principales por ingresos totales (con más ingresos) antes del
-descuento?
+12. ¿Cuáles son los 3 productos mas vendidos en función a los ingresos totales? 
 
 13. ¿Cuál es la cantidad total, los ingresos y el descuento de cada segmento de
 producto?
