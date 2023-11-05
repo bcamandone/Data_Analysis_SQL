@@ -1,4 +1,4 @@
---1. ¿Cuál fue la cantidad total vendida de todos los productos?:
+--1. ¿Cuál fue la cantidad total vendida de todos los productos?
 SELECT
 SUM(qty) AS cantidad_productos
 FROM public.ventas;
