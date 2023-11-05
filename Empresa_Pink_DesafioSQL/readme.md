@@ -26,8 +26,7 @@ descuentos?
 
 12. ¿Cuáles son los 3 productos mas vendidos en función a los ingresos totales? 
 
-13. ¿Cuál es la cantidad total, los ingresos y el descuento de cada segmento de
-producto?
+13. ¿Cuál es la cantidad total vendida, los ingresos brutos y el descuento de cada segmento de producto?
 
 14. ¿Cuál es el producto más vendido de cada categoría?
 
