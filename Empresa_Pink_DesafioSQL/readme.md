@@ -1,6 +1,6 @@
 ## Responder a las siguientes preguntas utilizando Lenguaje SQL: 
 
- 1.¿Cuál fue la cantidad total vendida de todos los productos?
+   1.¿Cuál fue la cantidad total vendida de todos los productos?
 
 2. ¿Cuál es el ingreso total generado por todos los productos antes de los
 descuentos?
