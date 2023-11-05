@@ -37,4 +37,4 @@ descuentos?
 
 Tener en cuenta:
 - Ventas netas: se les resta el valor de la columna descuento.
-- Ventas brutas:sin el descuento
+- Ventas brutas: sin el descuento
