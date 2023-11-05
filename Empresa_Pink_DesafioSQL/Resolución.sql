@@ -2,14 +2,17 @@
 SELECT
 SUM(qty) AS cantidad_productos
 FROM public.ventas;
+
 --2. ¿Cuál es el ingreso total generado por todos los productos antes de los descuentos?
 SELECT
 SUM(qty*precio) AS ingreso_total
 FROM public.ventas
+ 
 --3. ¿Cuál es el ingreso promedio generado por todos los productos antes de descuentos?
 SELECT
 ROUND(AVG(precio*qty),2) AS ingreso_total_medio
 FROM public.ventas
+ 
 --4. ¿Cuál es el ingreso total generado por cada producto antes de los descuentos?
 -- Mostrar el nombre del producto y el ingreso, ordenar de mayor a menor por ingreso total
 SELECT
@@ -20,14 +23,13 @@ JOIN public.producto_detalle pd
 ON pd.id_producto = v.id_producto
 GROUP BY pd.nombre_producto
 ORDER BY ingreso_total DESC
+ 
 --5. ¿Cuál es el porcentaje total de descuento (sobre el ingreso total) para todos los productos?
 SELECT
 SUM(descuento) AS descuento_total,
 SUM(qty*precio) AS ingreso_total,
 100 * SUM(descuento)/SUM(qty*precio)  AS porcentaje_descuento
 FROM public.ventas
-
-
 
 --6. ¿Cuál es el porcentaje total de descuento (sobre el ingreso total) por cada producto?
 SELECT
@@ -39,10 +41,12 @@ FROM public.ventas v
 JOIN public.producto_detalle pd
 ON pd.id_producto = v.id_producto
 GROUP BY pd.nombre_producto
+ 
 --7. ¿Cuántas transacciones únicas hubo
 SELECT
 COUNT(DISTINCT id_txn) AS transacciones_unicas
 FROM public.ventas
+ 
 --8. ¿Cuáles son las ventas totales brutas de cada transacción?
 SELECT
 id_txn,
@@ -50,10 +54,6 @@ SUM(qty*precio) AS ventas_totales_brutas
 FROM ventas
 GROUP BY id_txn
 ORDER BY ventas_totales_brutas
-
-
-
-
 
 --9. ¿Qué cantidad de productos totales se compran en cada transacción?
 SELECT
@@ -118,7 +118,7 @@ cantidad_vendida
 from tmp
 where rankeado = 1
 
- --15. ¿Cuál es el producto más vendido para cada segmento?
+--15. ¿Cuál es el producto más vendido para cada segmento?
 
 WITH tmp as (
 SELECT 
