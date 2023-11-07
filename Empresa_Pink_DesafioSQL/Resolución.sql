@@ -27,18 +27,20 @@ GROUP BY pd.nombre_producto
 ORDER BY ingreso_total DESC
  
 --5. ¿Cuál es el porcentaje total de descuento (sobre el ingreso total) para todos los productos?
+ 
 SELECT
 SUM(descuento) AS descuento_total,
 SUM(qty*precio) AS ingreso_total,
-100 * SUM(descuento)/SUM(qty*precio)  AS porcentaje_descuento
+ROUND((100.0 *  SUM(descuento)/SUM(qty*precio) :: numeric),2) AS porcentaje_descuento 
 FROM public.ventas
-
+ 
 --6. ¿Cuál es el porcentaje total de descuento (sobre el ingreso total) por cada producto?
+ 
 SELECT
 nombre_producto,
 SUM(descuento) AS descuento_total,
 SUM(qty*v.precio) AS ingreso_total,
-100 * SUM(descuento)/SUM(qty*v.precio) AS porcentaje_descuento
+ROUND((100.0 *  SUM(descuento)/SUM(qty*v.precio) :: numeric),2) AS porcentaje_descuento 
 FROM public.ventas v
 JOIN public.producto_detalle pd
 ON pd.id_producto = v.id_producto
