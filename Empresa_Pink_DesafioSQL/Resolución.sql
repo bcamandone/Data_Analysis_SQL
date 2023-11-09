@@ -46,7 +46,7 @@ JOIN public.producto_detalle pd
 ON pd.id_producto = v.id_producto
 GROUP BY pd.nombre_producto
  
---7. ¿Cuántas transacciones únicas hubo
+--7. ¿Cuántas transacciones únicas hubo?
 SELECT
 COUNT(DISTINCT id_txn) AS transacciones_unicas
 FROM public.ventas
