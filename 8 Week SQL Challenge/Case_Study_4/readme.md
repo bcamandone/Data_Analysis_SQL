@@ -7,6 +7,10 @@ Danny lanzó una nueva iniciativa, Data Bank, que gestiona actividades bancarias
 El equipo de gestión de Data Bank quiere aumentar su base total de clientes, pero también necesita ayuda para rastrear cuánto almacenamiento de datos necesitarán sus clientes. ¡Este estudio de caso trata sobre calcular métricas y ayudar a la empresa a analizar sus datos de una manera inteligente para pronosticar y planificar mejor sus desarrollos futuros!
 
 ## A. Exploración de nodos de clientes
-
+1) ¿Cuántos nodos únicos hay en el sistema del Banco de Datos?
+2) ¿Cuál es la cantidad de nodos por región?
+3) ¿Cuántos clientes están asignados a cada región?
+4) ¿En cuántos días en promedio se reasignan los clientes a un nodo diferente?
+5) ¿Cuál es la mediana, percentil 80 y 95 para esta misma métrica de días de reasignación para cada región?
 
 ## B. Transacciones de clientes
