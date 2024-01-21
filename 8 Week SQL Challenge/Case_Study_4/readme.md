@@ -14,3 +14,8 @@ El equipo de gestión de Data Bank quiere aumentar su base total de clientes, pe
 5) ¿Cuál es la mediana, percentil 80 y 95 para esta misma métrica de días de reasignación para cada región?
 
 ## B. Transacciones de clientes
+1) ¿Cuál es el recuento único y el monto total para cada tipo de transacción?
+2) ¿Cuál es el promedio total histórico de depósitos y montos de todos los clientes?
+3) Para cada mes, ¿cuántos clientes de Data Bank realizan más de 1 depósito y 1 compra o 1 retiro en un solo mes?
+4) ¿Cuál es el saldo final de cada cliente al final del mes?
+5) ¿Cuál es el porcentaje de clientes que aumentan su saldo final en más del 5%?
