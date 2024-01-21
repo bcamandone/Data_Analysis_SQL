@@ -9,3 +9,11 @@ JOIN regions r
 ON c.region_id = r.region_id
 GROUP BY 1,3
 ORDER BY 1
+
+--3)¿Cuántos clientes están asignados a cada región?
+SELECT R.region_id,region_name,COUNT(DISTINCT n.customer_id) as clientes
+FROM customer_nodes n
+JOIN regions r
+ON n.region_id = r.region_id
+GROUP BY 1,2
+ORDER BY 1 
