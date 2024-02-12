@@ -49,3 +49,7 @@ coincidencias de la tabla derecha (o NULL si no hay coincidencia en la tabla der
 Una tabla derivada es básicamente una subconsulta, excepto que está siempre en la cláusula FROM de una instrucción SQL.
 La razón por lo que se le llama tabla derivada es debido a que esencialmente funciona como una tabla en la consulta completa.
 Una tabla derivada sólo existe en la consulta en la que se crea. Por lo tanto, las tablas derivadas no son en realidad parte del esquema de la base de datos.
+
+
+
+
