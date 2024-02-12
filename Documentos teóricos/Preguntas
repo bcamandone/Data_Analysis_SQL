@@ -25,7 +25,7 @@ Los alias se utilizan principalmente para abreviar los nombres largos o para dar
 
 
 7) Explique que es la cardinalidad  y mencione los distintos tipos que existen 
- La cardinalidad Describe cuántas filas de una tabla pueden estar asociadas con cuántas filas de otra tabla a través de una relación.
+ La cardinalidad describe cuántas filas de una tabla pueden estar asociadas con cuántas filas de otra tabla a través de una relación.
  Los tipos principales de cardinalidad en SQL son:
 • Relación uno (1) a uno (1) 
 • Relación uno (1) a varios (N)
