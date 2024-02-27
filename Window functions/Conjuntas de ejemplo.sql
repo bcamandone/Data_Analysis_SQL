@@ -31,9 +31,8 @@ SELECT
 	group_name,
 	price,
 	FIRST_VALUE(price) OVER (
-		PARTITION BY group_name
-		ORDER BY
-			price) AS menor_precio_por_grupo
+		PARTITION BY group_name ORDER BY 
+	        price) AS menor_precio_por_grupo
 FROM
 	products p 
 	INNER JOIN product_groups pg ON p.group_id = pg.group_id;
