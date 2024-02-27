@@ -10,3 +10,15 @@ FROM
 	products p 
 	INNER JOIN product_groups pg ON p.group_id = pg.group_id;
 
+--2) Ejemplo Ranking Window Functions
+--Esta consulta selecciona el nombre del producto, el nombre del grupo Y el precio del producto y calcula el ranking de los productos dentro de cada grupo basado en el precio ordenado de forma descendente.
+
+SELECT
+	product_name,
+	group_name,
+	price,
+	DENSE_RANK () OVER (PARTITION BY group_name ORDER BY
+			price DESC) as ranking
+FROM
+	products p 
+	INNER JOIN product_groups pg ON p.group_id = pg.group_id;
