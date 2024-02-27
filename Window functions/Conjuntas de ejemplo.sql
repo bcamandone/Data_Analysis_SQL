@@ -17,7 +17,7 @@ SELECT
 	product_name,
 	group_name,
 	price,
-	DENSE_RANK () OVER (PARTITION BY group_name ORDER BY
+	DENSE_RANK() OVER (PARTITION BY group_name ORDER BY
 			price DESC) as ranking
 FROM
 	products p 
@@ -30,7 +30,7 @@ SELECT
 	product_name,
 	group_name,
 	price,
-	FIRST_VALUE (price) OVER (
+	FIRST_VALUE(price) OVER (
 		PARTITION BY group_name
 		ORDER BY
 			price) AS menor_precio_por_grupo
