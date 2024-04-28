@@ -28,7 +28,7 @@ join sales s
 on c.car_id = s.car_id
 join salespersons sp
 on s.salesman_id = sp.salesman_id 
-where sp.name= 'Tom Lee' and  extract(year from s.purchase_date) ='2022'
+where sp.name= 'Tom Lee' and  extract(year from s.purchase_date) = 2022
 
 --5.¿Cuál es el nombre y ciudad del vendedor que vendió la mayor cantidad de autos en el año 2023?
 WITH max_vendedor as(
