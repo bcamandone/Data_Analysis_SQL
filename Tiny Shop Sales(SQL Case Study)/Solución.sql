@@ -88,3 +88,14 @@ SELECT
 string_agg(product_name, ' , ') AS productos_menos_comprados
 FROM menos_comprado
 where rnk = 1
+
+--8)¿Cuál es la mediana del pedido total?
+
+WITH pedido_total AS (
+SELECT quantity*price AS total
+FROM products_tiny p 
+JOIN order_items oi 
+ON p.product_id=oi.product_id)
+SELECT
+PERCENTILE_CONT(0.5)  within group (order by total)
+FROM pedido_total
