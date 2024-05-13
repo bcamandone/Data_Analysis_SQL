@@ -1,3 +1,5 @@
+--Motor de base de datos utilizado: Postgre SQL
+
 --1)¿Qué producto tiene el precio más alto? Devuelva una sola fila
 
 SELECT product_name
