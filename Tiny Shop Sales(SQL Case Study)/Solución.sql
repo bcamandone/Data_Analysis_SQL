@@ -113,3 +113,17 @@ JOIN order_items o
 ON p.product_id=o.product_id
 GROUP BY  1
 ORDER BY  1
+
+
+--10)Encuentre clientes que hayan pedido el producto con el precio más alto.
+
+SELECT CONCAT(first_name,' ',last_name) AS name,
+product_name
+FROM customers c 
+JOIN orders o 
+ON c.customer_id=o.customer_id
+JOIN order_items oi 
+ON oi.order_id=o.order_id
+JOIN products_tiny p 
+ON p.product_id=oi.product_id
+WHERE price=(SELECT MAX(price) FROM products_tiny)
