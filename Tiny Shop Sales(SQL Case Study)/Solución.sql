@@ -71,3 +71,20 @@ GROUP BY 1)
 SELECT name,productos_distintos,
 DENSE_RANK() OVER(ORDER BY productos_distintos DESC) AS rnk
 FROM customer
+
+--7)¿Qué producto se ha comprado menos en cantidad?
+
+WITH productos AS (
+SELECT product_name,SUM(quantity) AS total_qty
+FROM products_tiny p 
+JOIN order_items o 
+ON p.product_id=o.product_id
+GROUP BY product_name),
+menos_comprado AS (
+SELECT product_name,
+DENSE_RANK() OVER(ORDER BY total_qty ASC) AS rnk
+FROM productos)
+SELECT 
+string_agg(product_name, ' , ') AS productos_menos_comprados
+FROM menos_comprado
+where rnk = 1
