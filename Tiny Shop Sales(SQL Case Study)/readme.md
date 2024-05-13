@@ -13,7 +13,7 @@
 
 --5)Encuentre el primer pedido (por fecha) para cada cliente
 
---6)Encuentre los 3 principales clientes que han pedido los productos más distintos
+--6)Encuentre los 3 principales clientes que han pedido la mayor cantidad de productos distintos
 
 --7)¿Qué producto se ha comprado menos en cantidad?
 
