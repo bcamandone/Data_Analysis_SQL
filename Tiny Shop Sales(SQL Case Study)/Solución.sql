@@ -38,3 +38,20 @@ JOIN products_tiny p
 ON p.product_id=oi.product_id
 GROUP BY order_date
 ORDER BY ingreso DESC, ordenes DESC
+
+--5)Encuentre el primer pedido (por fecha) para cada cliente.
+
+WITH primera_orden AS (
+SELECT CONCAT(first_name,' ',last_name) AS name, product_name,
+DENSE_RANK() OVER(PARTITION BY first_name,last_name ORDER BY order_date) AS rnk
+FROM customers c
+JOIN orders o
+ON c.customer_id=o.customer_id
+JOIN order_items oi 
+ON o.order_id=oi.order_id
+JOIN products_tiny p 
+ON p.product_id=oi.product_id)
+SELECT name, string_agg(product_name, ',') AS productos_ordenados_1ero
+FROM primera_orden
+WHERE rnk=1
+GROUP BY 1
