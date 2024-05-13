@@ -55,3 +55,17 @@ SELECT name, string_agg(product_name, ',') AS productos_ordenados_1ero
 FROM primera_orden
 WHERE rnk=1
 GROUP BY 1
+
+--6)Encuentre los 3 principales clientes que han pedido la mayor cantidad de productos distintos
+
+WITH customer AS (
+SELECT CONCAT(first_name,' ',last_name) AS name,COUNT(DISTINCT(product_id)) AS productos_distintos
+FROM customers c 
+JOIN orders o 
+ON c.customer_id=o.customer_id
+JOIN order_items oi 
+ON oi.order_id=o.order_id
+GROUP BY 1)
+SELECT name,productos_distintos,
+DENSE_RANK() OVER(ORDER BY productos_distintos DESC) AS rnk
+FROM customer
