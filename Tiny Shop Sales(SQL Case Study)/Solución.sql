@@ -99,3 +99,17 @@ ON p.product_id=oi.product_id)
 SELECT
 PERCENTILE_CONT(0.5)  within group (order by total)
 FROM pedido_total
+
+--9)Para cada pedido, determine si fue "Caro" (en total más de 300), "Asequible" (en total más de 100) o "Barato".
+
+SELECT
+order_id,
+SUM(price*quantity) AS monto_pedido,
+CASE WHEN SUM(price*quantity) > 300 THEN 'Caro'
+     WHEN SUM(price*quantity) > 100 AND SUM(price*quantity) <= 300 THEN 'Asequible'
+	 ELSE 'Barato' END AS Segmentacion
+FROM products_tiny p 
+JOIN order_items o 
+ON p.product_id=o.product_id
+GROUP BY  1
+ORDER BY  1
