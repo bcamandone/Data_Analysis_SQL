@@ -8,10 +8,11 @@ ORDER BY s.customer_id
 
 --2) ¿Cuántos días ha visitado cada cliente el restaurante?
 
-SELECT count(distinct(EXTRACT(DAY FROM order_date))) as cantidad_visitas, customer_id
-FROM "sales" 
-GROUP BY customer_id
-ORDER BY customer_id
+SELECT 
+customer_id,
+COUNT(DISTINCT order_date) AS visit_count
+FROM sales 
+GROUP BY customer_id;
 
 --3) ¿Cuál fue el primer artículo del menú comprado por cada cliente?
 
